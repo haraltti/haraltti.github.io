@@ -1,0 +1,20 @@
+{
+  "slug": "molkky",
+  "name": "Fifty",
+  "developer": "haraltti",
+  "contactEmail": "haraltti.apps@gmail.com",
+  "copyrightYear": 2026,
+  "icon": "icon.png",
+  "appleIcon": "apple-touch-icon.png",
+  "mascot": "mascot.svg",
+  "defaultLanguage": "en",
+  "languages": ["en", "fi", "fr", "es-MX"],
+  "stores": { "ios": null, "android": null },
+  "trademarkNote": "Mölkky is a trademark of Tactic Games. This app is not affiliated with Tactic Games.",
+  "theme": {
+    "primary": "#1F4E79",
+    "primaryDark": "#2F6FB0",
+    "soft": "#DCE7F2",
+    "softDark": "#1C2B3A"
+  }
+}

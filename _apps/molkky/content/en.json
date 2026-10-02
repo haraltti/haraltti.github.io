@@ -1,0 +1,202 @@
+{
+  "htmlLang": "en",
+  "label": "English",
+  "ui": {
+    "skip": "Skip to content",
+    "languageLabel": "Language",
+    "navHome": "Home",
+    "navPrivacy": "Privacy policy",
+    "navSupport": "Support",
+    "footerNav": "Footer",
+    "contact": "Contact",
+    "updated": "Last updated",
+    "updatedDate": "2 October 2026",
+    "comingSoon": "Coming soon",
+    "downloadOn": "Download on the",
+    "getItOn": "Get it on",
+    "appStore": "App Store",
+    "googlePlay": "Google Play",
+    "mascotAlt": "Nalle the bear swinging the throwing stick underhand"
+  },
+  "home": {
+    "title": "Fifty – Score Keeper for Mölkky",
+    "description": "Fifty keeps the score for Mölkky: tap the fallen pins and the app counts the points and applies the rules. No account, works offline, built for the garden.",
+    "heading": "Fifty",
+    "tagline": "Tap the pins, we count the points.",
+    "intro": [
+      "Fifty is a score keeper for Mölkky, the Finnish lawn game. Tap the pins that fell and the app does the rest: it adds the points, drops you back to 25 when you go over 50, knocks out a player after three misses in a row and tells you who is next.",
+      "Play on your own or in teams, with the official rules or your own house rules. It is made for the garden: big buttons, readable in bright sunshine and easy to use with one hand."
+    ],
+    "storesNote": "The app is on its way to the App Store and Google Play.",
+    "featuresTitle": "What you get",
+    "features": [
+      { "title": "Tap the pins", "text": "The 12 pins are laid out like the real ones. Tap the pins that fell and confirm: one pin scores its number, several score their count." },
+      { "title": "Rules done for you", "text": "Exactly 50 wins, over 50 drops you to 25, three misses in a row are out. Undo any throw, even after a win." },
+      { "title": "“What do you need?”", "text": "Always see how many points the player needs to win, and how to get them with one pin or a few." },
+      { "title": "Made for the outdoors", "text": "Large touch targets, a high-contrast sun mode, a screen that stays on and a design that is easy to read at arm’s length." },
+      { "title": "No account", "text": "No sign-up, no login. Your games and players stay on your phone." },
+      { "title": "Works offline", "text": "Play anywhere, even without a connection. The game is saved after every throw, so a phone call never loses your game." }
+    ]
+  },
+  "privacy": {
+    "heading": "Privacy policy",
+    "description": "How the Fifty app handles data: no accounts, data stays on your device, ads through Google AdMob, consent choices and how to delete your data.",
+    "intro": [
+      "This policy explains what the Fifty app (“the app”) does with information. We have kept the app simple on purpose: there are no user accounts, and we do not run a server that collects your data."
+    ],
+    "sections": [
+      {
+        "h": "In short",
+        "ul": [
+          "No user accounts and no sign-up.",
+          "Your games, players, settings and background picture are stored only on your device.",
+          "The app is free and shows ads through Google AdMob. Google processes some data to show and measure ads (see below).",
+          "In Europe the app asks for your consent first, and on iPhone it may also ask for tracking permission.",
+          "The app is not directed at children under 13.",
+          "Deleting the app deletes all the data the app has stored."
+        ]
+      },
+      {
+        "h": "What stays on your device",
+        "p": ["The app stores the following only on your phone. We cannot see it and it is never uploaded:"],
+        "ul": [
+          "games in progress and finished games (scores and throws),",
+          "the players you add (names and colours),",
+          "your settings (language, theme, accent colour, the rules you used last, ad consent state),",
+          "a background picture, if you choose one. You pick it with the system’s photo picker, and the app keeps a private copy inside its own storage."
+        ]
+      },
+      {
+        "h": "Ads and Google AdMob",
+        "p": [
+          "The app is free and is supported by ads. The ads are provided by Google AdMob (Google). To show, measure and protect ads, Google may collect and use:"
+        ],
+        "ul": [
+          "device identifiers, such as the advertising ID,",
+          "your IP address and the approximate location derived from it,",
+          "usage and diagnostic information about the app and the ads, such as ad views and interactions, device model and operating system version."
+        ],
+        "after": [
+          "Google collects and processes this data under its own policies. We do not receive it; we only see summary statistics such as the number of ad impressions. Read more in [How Google uses information from sites or apps that use its services](https://policies.google.com/technologies/partner-sites) and in the [Google Privacy Policy](https://policies.google.com/privacy).",
+          "The ads appear as a banner on the game screen, as a full-screen ad after a game and as an ad when the app is opened. No ad is ever shown in the middle of a throw."
+        ]
+      },
+      {
+        "h": "Your consent choices",
+        "p": [
+          "In the European Economic Area, the United Kingdom and other regions where the law requires it, the app shows Google’s consent form (UMP, User Messaging Platform) before the first ad is requested. Your choice decides whether ads may be personalised.",
+          "You can review or change your choice at any time in the app: **Settings → Ads and privacy → Ad privacy settings** (shown where consent applies)."
+        ]
+      },
+      {
+        "h": "Tracking permission on iPhone",
+        "p": [
+          "After the consent form, the app may ask for permission to track you across other companies’ apps and websites (Apple’s App Tracking Transparency). If you say no, you can still use the whole app and you still see ads, but they are not personalised using that kind of tracking.",
+          "You can change this later in iOS **Settings → Privacy & Security → Tracking**, or in the app’s own settings page in iOS Settings."
+        ]
+      },
+      {
+        "h": "Advertising ID on Android",
+        "p": ["On Android you can reset or delete your advertising ID, and opt out of ad personalisation, in your phone’s settings (usually under Privacy → Ads)."]
+      },
+      {
+        "h": "App updates",
+        "p": [
+          "The app can receive updates to its code over the air through Expo’s EAS Update service. When the app starts, it contacts Expo’s servers to check for an update. Like any internet connection, this reveals technical information to Expo, such as your IP address, platform and app version. We do not receive personal information through this. See the [Expo privacy policy](https://expo.dev/privacy)."
+        ]
+      },
+      {
+        "h": "Children",
+        "p": [
+          "The app is meant for the whole family but is not directed at children under 13, and we do not knowingly collect personal information from children under 13. The app tells Google that it is not child-directed and limits ads to content rated PG or milder.",
+          "If you think a child has given us personal information, contact us and we will help."
+        ]
+      },
+      {
+        "h": "Deleting your data",
+        "p": [
+          "We do not keep your data on a server, so there is nothing for us to delete. Deleting the app from your phone removes all games, players, settings and the background picture.",
+          "Data that Google holds for ads is managed in your Google Account, in [My Ad Center](https://myadcenter.google.com/)."
+        ]
+      },
+      {
+        "h": "Your rights",
+        "p": [
+          "Because we do not process your personal data ourselves, requests about data used for ads should be made to Google, which acts as an independent controller for it. For anything else, you can contact us and we will answer you."
+        ]
+      },
+      {
+        "h": "Changes to this policy",
+        "p": ["If the app changes in a way that affects your data, we will update this page and the date at the top."]
+      },
+      {
+        "h": "Contact",
+        "p": ["Questions about privacy: {email}. The app is published by haraltti."]
+      }
+    ]
+  },
+  "support": {
+    "heading": "Support",
+    "description": "Help for the Fifty app: the rules in short, house rules, what happens to your data when you change phones, and ad privacy settings.",
+    "intro": ["Answers to common questions about Fifty. If you do not find yours, write to us."],
+    "faq": [
+      {
+        "q": "How do the rules work?",
+        "a": ["The official Mölkky rules, in short:"],
+        "ul": [
+          "Knock down one pin and you score its number. Knock down two or more and you score the number of pins that fell.",
+          "Be the first to reach exactly 50. If you go over 50, your score drops back to 25.",
+          "Three misses in a row and you are out of the game. A throw that scores resets the count.",
+          "A pin counts as fallen only if it lies completely on the ground. Fallen pins are stood back up where they fell."
+        ]
+      },
+      {
+        "q": "Can I use my own house rules?",
+        "a": ["Yes. Before a game starts, the Rules screen lets you change:"],
+        "ul": [
+          "the target score (20–100),",
+          "whether going over drops you back, and to what score,",
+          "the miss limit (2–5, or off) and what happens when it is reached (out of the game, or score to zero),",
+          "the starting order, and the order for a rematch.",
+          "The official rules are preselected, and the app remembers the rules you used last."
+        ]
+      },
+      {
+        "q": "What does the Foul button do?",
+        "a": ["Use it when a throw breaks the rules, for example when you step over the throwing line. It scores 0 points and counts as a miss."]
+      },
+      {
+        "q": "Does the app need an internet connection?",
+        "a": ["No. Everything works offline, including the how-to-play guide. An internet connection is only used to show ads and to check for app updates."]
+      },
+      {
+        "q": "I closed the app in the middle of a game. Is the game lost?",
+        "a": ["No. The game is saved after every throw. Open the app and choose **Continue game**."]
+      },
+      {
+        "q": "What happens to my games and players when I change phones?",
+        "a": [
+          "There is no account and no cloud sync, so the app does not move your data to a new phone by itself. Games, players and settings are stored only on the device.",
+          "If you restore a full backup of your old phone (iCloud or Google backup), the app’s data may come along, depending on your backup settings. Otherwise you start fresh on the new phone."
+        ]
+      },
+      {
+        "q": "How do I change my ad privacy settings?",
+        "a": [
+          "Open **Settings → Ads and privacy** in the app. Where consent applies (for example in the EU), there is an **Ad privacy settings** button that reopens Google’s consent form.",
+          "On iPhone you can also change the tracking permission in iOS Settings → Privacy & Security → Tracking. On Android you can reset your advertising ID in your phone’s settings. See the [privacy policy](page:privacy) for details."
+        ]
+      },
+      {
+        "q": "How do I delete my data?",
+        "a": ["Delete the app from your phone. All games, players, settings and the background picture are removed with it."]
+      },
+      {
+        "q": "The text does not fit or something looks wrong.",
+        "a": ["Please tell us which phone and language you use, and what you saw. A screenshot helps."]
+      }
+    ],
+    "contactTitle": "Contact",
+    "contactText": ["Questions, bug reports and feedback: {email}. We answer as soon as we can."]
+  }
+}
