@@ -30,13 +30,41 @@
     "storesNote": "La app llegará pronto a la App Store y a Google Play.",
     "featuresTitle": "Lo que obtienes",
     "features": [
-      { "title": "Toca los bolos", "text": "Los 12 bolos están acomodados como los de verdad. Toca los que cayeron y confirma: un solo bolo vale su número y varios valen la cantidad que cayó." },
-      { "title": "Las reglas, automáticas", "text": "Exactamente 50 gana, pasarte de 50 te regresa a 25 y tres fallos seguidos te sacan del juego. Deshaz cualquier tiro, incluso después de ganar." },
-      { "title": "“¿Qué necesitas?”", "text": "Mira siempre cuántos puntos le faltan al jugador para ganar y cómo conseguirlos con un solo bolo o con varios." },
-      { "title": "Hecha para el aire libre", "text": "Botones grandes, un modo sol de alto contraste, la pantalla se queda encendida y todo se lee a distancia de brazo." },
-      { "title": "Sin cuenta", "text": "Sin registro y sin iniciar sesión. Tus partidas y tus jugadores se quedan en tu celular." },
-      { "title": "Funciona sin internet", "text": "Juega donde sea, incluso sin conexión. La partida se guarda después de cada tiro, así que una llamada no te hace perder el juego." }
-    ]
+      {
+        "title": "Toca los bolos",
+        "text": "Los 12 bolos están acomodados como los de verdad. Toca los que cayeron y confirma: un solo bolo vale su número y varios valen la cantidad que cayó."
+      },
+      {
+        "title": "Las reglas, automáticas",
+        "text": "Exactamente 50 gana, pasarte de 50 te regresa a 25 y tres fallos seguidos te sacan del juego. Deshaz cualquier tiro, incluso después de ganar."
+      },
+      {
+        "title": "“¿Qué necesitas?”",
+        "text": "Mira siempre cuántos puntos le faltan al jugador para ganar y cómo conseguirlos con un solo bolo o con varios."
+      },
+      {
+        "title": "Hecha para el aire libre",
+        "text": "Botones grandes, un modo sol de alto contraste, la pantalla se queda encendida y todo se lee a distancia de brazo."
+      },
+      {
+        "title": "Sin cuenta",
+        "text": "Sin registro y sin iniciar sesión. Tus partidas y tus jugadores se quedan en tu celular."
+      },
+      {
+        "title": "Funciona sin internet",
+        "text": "Juega donde sea, incluso sin conexión. La partida se guarda después de cada tiro, así que una llamada no te hace perder el juego."
+      }
+    ],
+    "related": {
+      "title": "También de Fifty",
+      "items": [
+        {
+          "slug": "molkkygame",
+          "name": "Fifty – Mölkky juego",
+          "text": "¿No tienes bolos a la mano? Tira en tu celular: un reto de mölkky nuevo cada día, el mismo para todos."
+        }
+      ]
+    }
   },
   "privacy": {
     "heading": "Aviso de privacidad",
@@ -58,7 +86,9 @@
       },
       {
         "h": "Lo que se queda en tu dispositivo",
-        "p": ["La app guarda lo siguiente solo en tu celular. Nosotros no lo vemos y nunca se sube a ningún lado:"],
+        "p": [
+          "La app guarda lo siguiente solo en tu celular. Nosotros no lo vemos y nunca se sube a ningún lado:"
+        ],
         "ul": [
           "las partidas en curso y las terminadas (puntajes y tiros),",
           "los jugadores que agregas (nombres y colores),",
@@ -97,7 +127,9 @@
       },
       {
         "h": "ID de publicidad en Android",
-        "p": ["En Android puedes restablecer o borrar tu ID de publicidad y rechazar la personalización de anuncios en la configuración de tu celular (normalmente en Privacidad → Anuncios)."]
+        "p": [
+          "En Android puedes restablecer o borrar tu ID de publicidad y rechazar la personalización de anuncios en la configuración de tu celular (normalmente en Privacidad → Anuncios)."
+        ]
       },
       {
         "h": "Actualizaciones de la app",
@@ -127,22 +159,30 @@
       },
       {
         "h": "Cambios a este aviso",
-        "p": ["Si la app cambia de una forma que afecte tus datos, actualizaremos esta página y la fecha de arriba."]
+        "p": [
+          "Si la app cambia de una forma que afecte tus datos, actualizaremos esta página y la fecha de arriba."
+        ]
       },
       {
         "h": "Contacto",
-        "p": ["Editor y responsable del tratamiento de datos: Harri Heikkilä, Finlandia. Preguntas sobre privacidad: {email}."]
+        "p": [
+          "Editor y responsable del tratamiento de datos: Harri Heikkilä, Finlandia. Preguntas sobre privacidad: {email}."
+        ]
       }
     ]
   },
   "support": {
     "heading": "Soporte",
     "description": "Ayuda para la app Fifty: las reglas en breve, reglas propias, qué pasa con tus datos si cambias de celular y la privacidad de los anuncios.",
-    "intro": ["Respuestas a las preguntas más comunes sobre Fifty. Si no encuentras la tuya, escríbenos."],
+    "intro": [
+      "Respuestas a las preguntas más comunes sobre Fifty. Si no encuentras la tuya, escríbenos."
+    ],
     "faq": [
       {
         "q": "¿Cómo funcionan las reglas?",
-        "a": ["Las reglas oficiales del Mölkky, en breve:"],
+        "a": [
+          "Las reglas oficiales del Mölkky, en breve:"
+        ],
         "ul": [
           "Si derribas un solo bolo, anotas el número que trae. Si derribas dos o más, anotas la cantidad de bolos caídos.",
           "Gana quien llegue primero a exactamente 50 puntos. Si te pasas de 50, tu puntaje regresa a 25.",
@@ -152,7 +192,9 @@
       },
       {
         "q": "¿Puedo usar mis propias reglas?",
-        "a": ["Sí. Antes de empezar una partida, la pantalla Reglas te deja cambiar:"],
+        "a": [
+          "Sí. Antes de empezar una partida, la pantalla Reglas te deja cambiar:"
+        ],
         "ul": [
           "el puntaje objetivo (de 20 a 100),",
           "si pasarte te regresa a un puntaje anterior y a cuál,",
@@ -163,15 +205,21 @@
       },
       {
         "q": "¿Qué hace el botón Falta?",
-        "a": ["Úsalo cuando un tiro rompe las reglas, por ejemplo si pisas la línea de tiro. Vale 0 puntos y cuenta como fallo."]
+        "a": [
+          "Úsalo cuando un tiro rompe las reglas, por ejemplo si pisas la línea de tiro. Vale 0 puntos y cuenta como fallo."
+        ]
       },
       {
         "q": "¿La app necesita internet?",
-        "a": ["No. Todo funciona sin conexión, incluida la guía para aprender a jugar. Internet solo se usa para mostrar anuncios y buscar actualizaciones de la app."]
+        "a": [
+          "No. Todo funciona sin conexión, incluida la guía para aprender a jugar. Internet solo se usa para mostrar anuncios y buscar actualizaciones de la app."
+        ]
       },
       {
         "q": "Cerré la app en medio de una partida. ¿Se perdió el juego?",
-        "a": ["No. La partida se guarda después de cada tiro. Abre la app y elige **Continuar partida**."]
+        "a": [
+          "No. La partida se guarda después de cada tiro. Abre la app y elige **Continuar partida**."
+        ]
       },
       {
         "q": "¿Qué pasa con mis partidas y jugadores si cambio de celular?",
@@ -189,14 +237,20 @@
       },
       {
         "q": "¿Cómo borro mis datos?",
-        "a": ["Borra la app de tu celular. Todas las partidas, los jugadores, los ajustes y la imagen de fondo se eliminan con ella."]
+        "a": [
+          "Borra la app de tu celular. Todas las partidas, los jugadores, los ajustes y la imagen de fondo se eliminan con ella."
+        ]
       },
       {
         "q": "Un texto se corta o algo se ve mal.",
-        "a": ["Dinos qué celular e idioma usas y qué viste. Una captura de pantalla ayuda."]
+        "a": [
+          "Dinos qué celular e idioma usas y qué viste. Una captura de pantalla ayuda."
+        ]
       }
     ],
     "contactTitle": "Contacto",
-    "contactText": ["Preguntas, reportes de errores y comentarios: {email}. Respondemos lo antes posible."]
+    "contactText": [
+      "Preguntas, reportes de errores y comentarios: {email}. Respondemos lo antes posible."
+    ]
   }
 }

@@ -41,7 +41,7 @@ function inline(text, ctx) {
   );
   out = out.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
   out = out.replace(/\{email\}/g, `<a href="mailto:${ctx.app.contactEmail}">${ctx.app.contactEmail}</a>`);
-  out = out.replace(/\{app\}/g, escapeHtml(ctx.app.name));
+  out = out.replace(/\{app\}/g, escapeHtml(appName(ctx)));
   return out;
 }
 
@@ -55,6 +55,29 @@ const bullets = (list, ctx) =>
 function pageUrl(app, code, page) {
   const base = code === app.defaultLanguage ? `/${app.slug}/` : `/${app.slug}/${code}/`;
   return base + page.path;
+}
+
+/** The app's name in the page's language: the content file's "appName", or the name in app.json. */
+function appName(ctx) {
+  return ctx.lang.appName ?? ctx.app.name;
+}
+
+/** Sister apps listed on the home page (content "home.related"), linked in the same language. */
+function relatedSection(ctx) {
+  const related = ctx.lang.home.related;
+  if (!related) return '';
+  const items = related.items.map((item) => {
+    const other = JSON.parse(fs.readFileSync(path.join(root, '_apps', item.slug, 'app.json'), 'utf8'));
+    const code = other.languages.includes(ctx.code) ? ctx.code : other.defaultLanguage;
+    return `<li><h3><a href="${pageUrl(other, code, PAGES[0])}">${escapeHtml(item.name)}</a></h3><p>${inline(item.text, ctx)}</p></li>`;
+  });
+  return `
+      <section aria-labelledby="related">
+        <h2 id="related">${escapeHtml(related.title)}</h2>
+        <ul class="features">
+          ${items.join('\n          ')}
+        </ul>
+      </section>`;
 }
 
 // ---- page pieces ----
@@ -86,7 +109,7 @@ function head(ctx, page, meta) {
   <link rel="canonical" href="${canonical}">
   ${alternates}
   <meta property="og:type" content="website">
-  <meta property="og:site_name" content="${escapeHtml(app.name)}">
+  <meta property="og:site_name" content="${escapeHtml(appName(ctx))}">
   <meta property="og:title" content="${escapeHtml(meta.title)}">
   <meta property="og:description" content="${escapeHtml(meta.description)}">
   <meta property="og:url" content="${canonical}">
@@ -117,13 +140,13 @@ function header(ctx, page) {
   }).join('\n        ');
   return `<header class="site-header">
     <div class="wrap">
-      <a class="brand" href="${pageUrl(app, code, PAGES[0])}"><img src="/${app.slug}/${app.icon}" alt="" width="44" height="44"><span>${escapeHtml(app.name)}</span></a>
+      <a class="brand" href="${pageUrl(app, code, PAGES[0])}"><img src="/${app.slug}/${app.icon}" alt="" width="44" height="44"><span>${escapeHtml(appName(ctx))}</span></a>
       <nav class="lang" aria-label="${escapeHtml(ui.languageLabel)}">
         ${switcher}
       </nav>
     </div>
     <div class="wrap">
-      <nav class="nav" aria-label="${escapeHtml(app.name)}">
+      <nav class="nav" aria-label="${escapeHtml(appName(ctx))}">
         ${nav}
       </nav>
     </div>
@@ -185,7 +208,7 @@ function homeMain(ctx) {
         <ul class="features">
           ${h.features.map((f) => `<li><h3>${escapeHtml(f.title)}</h3><p>${inline(f.text, ctx)}</p></li>`).join('\n          ')}
         </ul>
-      </section>
+      </section>${relatedSection(ctx)}
     </div>`;
 }
 
@@ -234,7 +257,7 @@ function renderPage(ctx, page) {
   const { app, lang, code, langs } = ctx;
   const meta = page.id === 'home'
     ? { title: lang.home.title, description: lang.home.description }
-    : { title: `${lang[page.id].heading} – ${app.name}`, description: lang[page.id].description };
+    : { title: `${lang[page.id].heading} – ${appName(ctx)}`, description: lang[page.id].description };
   const alt = Object.fromEntries(app.languages.map((c) => [c, pageUrl(app, c, page)]));
   const isDefault = code === app.defaultLanguage;
   return `<!doctype html>

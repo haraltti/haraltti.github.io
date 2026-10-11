@@ -30,13 +30,41 @@
     "storesNote": "Appi on tulossa App Storeen ja Google Playhin.",
     "featuresTitle": "Mitä saat",
     "features": [
-      { "title": "Napauta keilat", "text": "12 keilaa on asetettu kuten oikeassa pelissä. Napauta kaatuneet keilat ja vahvista: yksi keila antaa numeronsa verran pisteitä, useampi kaatuneiden määrän." },
-      { "title": "Säännöt hoituvat itsestään", "text": "Tasan 50 voittaa, yli 50 pudottaa 25:een ja kolme ohiheittoa putoaa pelistä. Voit kumota minkä tahansa heiton, myös voiton jälkeen." },
-      { "title": "”Mitä tarvitset?”", "text": "Näet aina, montako pistettä pelaajalta puuttuu voittoon ja miten ne saa yhdellä keilalla tai usealla." },
-      { "title": "Tehty ulkokäyttöön", "text": "Isot kosketusalueet, korkeakontrastinen aurinkotila, näyttö pysyy päällä ja ulkoasu on luettavissa käsivarren mitan päästä." },
-      { "title": "Ei tiliä", "text": "Ei rekisteröitymistä eikä kirjautumista. Pelit ja pelaajat pysyvät puhelimessasi." },
-      { "title": "Toimii ilman verkkoa", "text": "Pelaa missä tahansa, myös ilman yhteyttä. Peli tallentuu jokaisen heiton jälkeen, joten puhelu ei hävitä peliä." }
-    ]
+      {
+        "title": "Napauta keilat",
+        "text": "12 keilaa on asetettu kuten oikeassa pelissä. Napauta kaatuneet keilat ja vahvista: yksi keila antaa numeronsa verran pisteitä, useampi kaatuneiden määrän."
+      },
+      {
+        "title": "Säännöt hoituvat itsestään",
+        "text": "Tasan 50 voittaa, yli 50 pudottaa 25:een ja kolme ohiheittoa putoaa pelistä. Voit kumota minkä tahansa heiton, myös voiton jälkeen."
+      },
+      {
+        "title": "”Mitä tarvitset?”",
+        "text": "Näet aina, montako pistettä pelaajalta puuttuu voittoon ja miten ne saa yhdellä keilalla tai usealla."
+      },
+      {
+        "title": "Tehty ulkokäyttöön",
+        "text": "Isot kosketusalueet, korkeakontrastinen aurinkotila, näyttö pysyy päällä ja ulkoasu on luettavissa käsivarren mitan päästä."
+      },
+      {
+        "title": "Ei tiliä",
+        "text": "Ei rekisteröitymistä eikä kirjautumista. Pelit ja pelaajat pysyvät puhelimessasi."
+      },
+      {
+        "title": "Toimii ilman verkkoa",
+        "text": "Pelaa missä tahansa, myös ilman yhteyttä. Peli tallentuu jokaisen heiton jälkeen, joten puhelu ei hävitä peliä."
+      }
+    ],
+    "related": {
+      "title": "Myös Fiftyltä",
+      "items": [
+        {
+          "slug": "molkkygame",
+          "name": "Fifty – Mölkkypeli",
+          "text": "Ei keiloja käsillä? Heitä puhelimella: joka päivä uusi mölkkypulma, sama kaikille."
+        }
+      ]
+    }
   },
   "privacy": {
     "heading": "Tietosuojaseloste",
@@ -58,7 +86,9 @@
       },
       {
         "h": "Mitä jää laitteellesi",
-        "p": ["Appi tallentaa seuraavat tiedot vain puhelimeesi. Emme näe niitä, eikä niitä koskaan lähetetä minnekään:"],
+        "p": [
+          "Appi tallentaa seuraavat tiedot vain puhelimeesi. Emme näe niitä, eikä niitä koskaan lähetetä minnekään:"
+        ],
         "ul": [
           "keskeneräiset ja päättyneet pelit (pisteet ja heitot),",
           "lisäämäsi pelaajat (nimet ja värit),",
@@ -97,7 +127,9 @@
       },
       {
         "h": "Mainostunnus Androidilla",
-        "p": ["Androidilla voit nollata tai poistaa mainostunnuksesi ja kieltää mainosten personoinnin puhelimen asetuksissa (yleensä kohdassa Tietosuoja → Mainokset)."]
+        "p": [
+          "Androidilla voit nollata tai poistaa mainostunnuksesi ja kieltää mainosten personoinnin puhelimen asetuksissa (yleensä kohdassa Tietosuoja → Mainokset)."
+        ]
       },
       {
         "h": "Apin päivitykset",
@@ -127,22 +159,30 @@
       },
       {
         "h": "Muutokset selosteeseen",
-        "p": ["Jos appi muuttuu tavalla, joka vaikuttaa tietoihisi, päivitämme tämän sivun ja yläreunan päivämäärän."]
+        "p": [
+          "Jos appi muuttuu tavalla, joka vaikuttaa tietoihisi, päivitämme tämän sivun ja yläreunan päivämäärän."
+        ]
       },
       {
         "h": "Yhteystiedot",
-        "p": ["Julkaisija ja rekisterinpitäjä: Harri Heikkilä, Suomi. Kysymykset tietosuojasta: {email}."]
+        "p": [
+          "Julkaisija ja rekisterinpitäjä: Harri Heikkilä, Suomi. Kysymykset tietosuojasta: {email}."
+        ]
       }
     ]
   },
   "support": {
     "heading": "Tuki",
     "description": "Apua Fifty-appiin: säännöt lyhyesti, talon säännöt, mitä tiedoille käy puhelinta vaihdettaessa ja mainosten tietosuoja-asetukset.",
-    "intro": ["Vastauksia yleisiin kysymyksiin Fiftystä. Jos et löydä omaasi, kirjoita meille."],
+    "intro": [
+      "Vastauksia yleisiin kysymyksiin Fiftystä. Jos et löydä omaasi, kirjoita meille."
+    ],
     "faq": [
       {
         "q": "Miten säännöt toimivat?",
-        "a": ["Viralliset mölkyn säännöt lyhyesti:"],
+        "a": [
+          "Viralliset mölkyn säännöt lyhyesti:"
+        ],
         "ul": [
           "Jos kaadat yhden keilan, saat sen numeron verran pisteitä. Jos kaadat kaksi tai useampia, saat kaatuneiden keilojen määrän verran pisteitä.",
           "Ensimmäinen, joka saa tasan 50 pistettä, voittaa. Jos menet yli 50:n, pisteesi putoavat takaisin 25:een.",
@@ -152,7 +192,9 @@
       },
       {
         "q": "Voinko käyttää omia talon sääntöjä?",
-        "a": ["Voit. Ennen pelin alkua Säännöt-näkymässä voit muuttaa:"],
+        "a": [
+          "Voit. Ennen pelin alkua Säännöt-näkymässä voit muuttaa:"
+        ],
         "ul": [
           "tavoitepisteet (20–100),",
           "putoaako yli menevä takaisin ja mihin pisteisiin,",
@@ -163,15 +205,21 @@
       },
       {
         "q": "Mitä Virhe-nappi tekee?",
-        "a": ["Käytä sitä, kun heitto rikkoo sääntöjä, esimerkiksi astut heittolinjan yli. Heitosta saa 0 pistettä, ja se lasketaan ohiheitoksi."]
+        "a": [
+          "Käytä sitä, kun heitto rikkoo sääntöjä, esimerkiksi astut heittolinjan yli. Heitosta saa 0 pistettä, ja se lasketaan ohiheitoksi."
+        ]
       },
       {
         "q": "Tarvitseeko appi nettiyhteyden?",
-        "a": ["Ei. Kaikki toimii ilman verkkoa, myös pelin ohjeet. Nettiyhteyttä käytetään vain mainosten näyttämiseen ja apin päivitysten tarkistamiseen."]
+        "a": [
+          "Ei. Kaikki toimii ilman verkkoa, myös pelin ohjeet. Nettiyhteyttä käytetään vain mainosten näyttämiseen ja apin päivitysten tarkistamiseen."
+        ]
       },
       {
         "q": "Suljin apin kesken pelin. Katosiko peli?",
-        "a": ["Ei kadonnut. Peli tallentuu jokaisen heiton jälkeen. Avaa appi ja valitse **Jatka peliä**."]
+        "a": [
+          "Ei kadonnut. Peli tallentuu jokaisen heiton jälkeen. Avaa appi ja valitse **Jatka peliä**."
+        ]
       },
       {
         "q": "Mitä peleille ja pelaajille tapahtuu, kun vaihdan puhelinta?",
@@ -189,14 +237,20 @@
       },
       {
         "q": "Miten poistan tietoni?",
-        "a": ["Poista appi puhelimestasi. Kaikki pelit, pelaajat, asetukset ja taustakuva poistuvat sen mukana."]
+        "a": [
+          "Poista appi puhelimestasi. Kaikki pelit, pelaajat, asetukset ja taustakuva poistuvat sen mukana."
+        ]
       },
       {
         "q": "Teksti ei mahdu tai jokin näyttää väärältä.",
-        "a": ["Kerro meille, mitä puhelinta ja kieltä käytät ja mitä näit. Kuvakaappauksesta on apua."]
+        "a": [
+          "Kerro meille, mitä puhelinta ja kieltä käytät ja mitä näit. Kuvakaappauksesta on apua."
+        ]
       }
     ],
     "contactTitle": "Yhteystiedot",
-    "contactText": ["Kysymykset, virheilmoitukset ja palaute: {email}. Vastaamme mahdollisimman pian."]
+    "contactText": [
+      "Kysymykset, virheilmoitukset ja palaute: {email}. Vastaamme mahdollisimman pian."
+    ]
   }
 }

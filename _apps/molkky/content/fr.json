@@ -30,13 +30,41 @@
     "storesNote": "L’application arrive bientôt sur l’App Store et sur Google Play.",
     "featuresTitle": "Ce que vous obtenez",
     "features": [
-      { "title": "Touchez les quilles", "text": "Les 12 quilles sont disposées comme les vraies. Touchez celles qui sont tombées et validez : une seule quille rapporte son numéro, plusieurs rapportent leur nombre." },
-      { "title": "Les règles, c’est automatique", "text": "50 pile, c’est gagné ; au-delà de 50, retour à 25 ; trois lancers ratés d’affilée, c’est l’élimination. Annulez n’importe quel lancer, même après une victoire." },
-      { "title": "« Que faut-il ? »", "text": "Voyez toujours combien de points il manque au joueur pour gagner, et comment les obtenir avec une seule quille ou plusieurs." },
-      { "title": "Conçue pour l’extérieur", "text": "De grandes zones tactiles, un mode soleil très contrasté, un écran qui reste allumé et un affichage lisible à bout de bras." },
-      { "title": "Sans compte", "text": "Pas d’inscription, pas de connexion. Vos parties et vos joueurs restent sur votre téléphone." },
-      { "title": "Hors connexion", "text": "Jouez partout, même sans réseau. La partie est enregistrée après chaque lancer : un appel téléphonique ne fait donc rien perdre." }
-    ]
+      {
+        "title": "Touchez les quilles",
+        "text": "Les 12 quilles sont disposées comme les vraies. Touchez celles qui sont tombées et validez : une seule quille rapporte son numéro, plusieurs rapportent leur nombre."
+      },
+      {
+        "title": "Les règles, c’est automatique",
+        "text": "50 pile, c’est gagné ; au-delà de 50, retour à 25 ; trois lancers ratés d’affilée, c’est l’élimination. Annulez n’importe quel lancer, même après une victoire."
+      },
+      {
+        "title": "« Que faut-il ? »",
+        "text": "Voyez toujours combien de points il manque au joueur pour gagner, et comment les obtenir avec une seule quille ou plusieurs."
+      },
+      {
+        "title": "Conçue pour l’extérieur",
+        "text": "De grandes zones tactiles, un mode soleil très contrasté, un écran qui reste allumé et un affichage lisible à bout de bras."
+      },
+      {
+        "title": "Sans compte",
+        "text": "Pas d’inscription, pas de connexion. Vos parties et vos joueurs restent sur votre téléphone."
+      },
+      {
+        "title": "Hors connexion",
+        "text": "Jouez partout, même sans réseau. La partie est enregistrée après chaque lancer : un appel téléphonique ne fait donc rien perdre."
+      }
+    ],
+    "related": {
+      "title": "Aussi de Fifty",
+      "items": [
+        {
+          "slug": "molkkygame",
+          "name": "Fifty – Mölkky jeu",
+          "text": "Pas de quilles sous la main ? Lancez sur votre téléphone : un nouveau défi de mölkky chaque jour, le même pour tous."
+        }
+      ]
+    }
   },
   "privacy": {
     "heading": "Politique de confidentialité",
@@ -58,7 +86,9 @@
       },
       {
         "h": "Ce qui reste sur votre appareil",
-        "p": ["L’application enregistre les éléments suivants uniquement sur votre téléphone. Nous ne pouvons pas les voir et ils ne sont jamais envoyés :"],
+        "p": [
+          "L’application enregistre les éléments suivants uniquement sur votre téléphone. Nous ne pouvons pas les voir et ils ne sont jamais envoyés :"
+        ],
         "ul": [
           "les parties en cours et terminées (scores et lancers),",
           "les joueurs que vous ajoutez (noms et couleurs),",
@@ -97,7 +127,9 @@
       },
       {
         "h": "Identifiant publicitaire sur Android",
-        "p": ["Sur Android, vous pouvez réinitialiser ou supprimer votre identifiant publicitaire et refuser la personnalisation des annonces dans les paramètres du téléphone (généralement sous Confidentialité → Annonces)."]
+        "p": [
+          "Sur Android, vous pouvez réinitialiser ou supprimer votre identifiant publicitaire et refuser la personnalisation des annonces dans les paramètres du téléphone (généralement sous Confidentialité → Annonces)."
+        ]
       },
       {
         "h": "Mises à jour de l’application",
@@ -127,22 +159,30 @@
       },
       {
         "h": "Modifications de cette politique",
-        "p": ["Si l’application change d’une manière qui affecte vos données, nous mettrons à jour cette page et la date en haut."]
+        "p": [
+          "Si l’application change d’une manière qui affecte vos données, nous mettrons à jour cette page et la date en haut."
+        ]
       },
       {
         "h": "Contact",
-        "p": ["Éditeur et responsable du traitement : Harri Heikkilä, Finlande. Questions sur la confidentialité : {email}."]
+        "p": [
+          "Éditeur et responsable du traitement : Harri Heikkilä, Finlande. Questions sur la confidentialité : {email}."
+        ]
       }
     ]
   },
   "support": {
     "heading": "Assistance",
     "description": "Aide pour l’application Fifty : les règles en bref, les règles maison, ce qu’il advient de vos données quand vous changez de téléphone et les réglages de confidentialité des publicités.",
-    "intro": ["Réponses aux questions fréquentes sur Fifty. Si vous ne trouvez pas la vôtre, écrivez-nous."],
+    "intro": [
+      "Réponses aux questions fréquentes sur Fifty. Si vous ne trouvez pas la vôtre, écrivez-nous."
+    ],
     "faq": [
       {
         "q": "Comment fonctionnent les règles ?",
-        "a": ["Les règles officielles du Mölkky, en bref :"],
+        "a": [
+          "Les règles officielles du Mölkky, en bref :"
+        ],
         "ul": [
           "Si vous faites tomber une seule quille, vous marquez son numéro. Si vous en faites tomber deux ou plus, vous marquez le nombre de quilles tombées.",
           "Le premier à atteindre exactement 50 points gagne. Si vous dépassez 50, votre score retombe à 25.",
@@ -152,7 +192,9 @@
       },
       {
         "q": "Puis-je utiliser mes propres règles maison ?",
-        "a": ["Oui. Avant le début d’une partie, l’écran Règles permet de modifier :"],
+        "a": [
+          "Oui. Avant le début d’une partie, l’écran Règles permet de modifier :"
+        ],
         "ul": [
           "le score à atteindre (20 à 100),",
           "si le dépassement fait revenir en arrière, et à quel score,",
@@ -163,15 +205,21 @@
       },
       {
         "q": "À quoi sert le bouton Faute ?",
-        "a": ["Utilisez-le quand un lancer enfreint les règles, par exemple si vous dépassez la ligne de lancer. Il rapporte 0 point et compte comme un lancer raté."]
+        "a": [
+          "Utilisez-le quand un lancer enfreint les règles, par exemple si vous dépassez la ligne de lancer. Il rapporte 0 point et compte comme un lancer raté."
+        ]
       },
       {
         "q": "L’application a-t-elle besoin d’une connexion internet ?",
-        "a": ["Non. Tout fonctionne hors connexion, y compris les règles du jeu. La connexion internet ne sert qu’à afficher les publicités et à vérifier les mises à jour."]
+        "a": [
+          "Non. Tout fonctionne hors connexion, y compris les règles du jeu. La connexion internet ne sert qu’à afficher les publicités et à vérifier les mises à jour."
+        ]
       },
       {
         "q": "J’ai fermé l’application en pleine partie. La partie est-elle perdue ?",
-        "a": ["Non. La partie est enregistrée après chaque lancer. Ouvrez l’application et choisissez **Reprendre la partie**."]
+        "a": [
+          "Non. La partie est enregistrée après chaque lancer. Ouvrez l’application et choisissez **Reprendre la partie**."
+        ]
       },
       {
         "q": "Que deviennent mes parties et mes joueurs quand je change de téléphone ?",
@@ -189,14 +237,20 @@
       },
       {
         "q": "Comment supprimer mes données ?",
-        "a": ["Supprimez l’application de votre téléphone. Toutes les parties, tous les joueurs, les réglages et l’image d’arrière-plan sont supprimés avec elle."]
+        "a": [
+          "Supprimez l’application de votre téléphone. Toutes les parties, tous les joueurs, les réglages et l’image d’arrière-plan sont supprimés avec elle."
+        ]
       },
       {
         "q": "Un texte est coupé ou quelque chose semble anormal.",
-        "a": ["Dites-nous quel téléphone et quelle langue vous utilisez, et ce que vous avez vu. Une capture d’écran nous aide."]
+        "a": [
+          "Dites-nous quel téléphone et quelle langue vous utilisez, et ce que vous avez vu. Une capture d’écran nous aide."
+        ]
       }
     ],
     "contactTitle": "Contact",
-    "contactText": ["Questions, signalements de problèmes et avis : {email}. Nous répondons dès que possible."]
+    "contactText": [
+      "Questions, signalements de problèmes et avis : {email}. Nous répondons dès que possible."
+    ]
   }
 }

@@ -1,6 +1,7 @@
 {
   "htmlLang": "fi",
   "label": "Suomi",
+  "appName": "Fifty – Mölkkypeli",
   "ui": {
     "skip": "Siirry sisältöön",
     "languageLabel": "Kieli",
@@ -19,9 +20,9 @@
     "mascotAlt": "Nalle-karhu heittää kapulaa alakautta"
   },
   "home": {
-    "title": "Fifty Mölkkypeli – heittopeli mölkyn säännöillä ja päivän pulma",
+    "title": "Fifty – Mölkkypeli ja päivän pulma",
     "description": "Heitä kapulaa, kaada keiloja ja osu tasan 50 pisteeseen. Joka päivä uusi pulma, sama kaikille. Ei tiliä, toimii ilman verkkoa.",
-    "heading": "Fifty Mölkkypeli",
+    "heading": "Fifty – Mölkkypeli",
     "tagline": "Osu tasan viiteenkymmeneen.",
     "intro": [
       "Fifty Mölkkypeli on heittopeli mölkyn säännöillä. Vedä, tähtää ja päästä irti: kapula liukuu keiloihin tai lentää kaariheitolla etummaisten yli. Yksi keila antaa numeronsa verran pisteitä, useampi kaatuneiden määrän, ja yli 50 pudottaa takaisin 25:een.",
@@ -54,7 +55,17 @@
         "title": "Toimii ilman verkkoa",
         "text": "Pulmat syntyvät puhelimessasi, joten voit pelata ilman yhteyttä."
       }
-    ]
+    ],
+    "related": {
+      "title": "Myös Fiftyltä",
+      "items": [
+        {
+          "slug": "molkky",
+          "name": "Fifty – Mölkky-pistelaskuri",
+          "text": "Pelaatko oikeaa mölkkyä pihalla? Napauta kaatuneet keilat, niin appi laskee pisteet ja noudattaa sääntöjä."
+        }
+      ]
+    }
   },
   "privacy": {
     "heading": "Tietosuojaseloste",

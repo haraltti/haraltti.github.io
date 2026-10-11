@@ -1,6 +1,7 @@
 {
   "htmlLang": "es-MX",
   "label": "Español",
+  "appName": "Fifty – Mölkky juego",
   "ui": {
     "skip": "Ir al contenido",
     "languageLabel": "Idioma",
@@ -19,12 +20,12 @@
     "mascotAlt": "Nalle, el oso, lanza el palo desde abajo"
   },
   "home": {
-    "title": "Fifty Mölkkypeli – un juego de tiro con las reglas del mölkky y un reto diario",
+    "title": "Fifty – Mölkky juego: un reto diario",
     "description": "Lanza el palo, tira los bolos y llega a 50 exactos. Un reto nuevo cada día, el mismo para todos. Sin cuenta, funciona sin conexión.",
-    "heading": "Fifty Mölkkypeli",
+    "heading": "Fifty – Mölkky juego",
     "tagline": "Llega a 50 exactos.",
     "intro": [
-      "Fifty Mölkkypeli es un juego de tiro con las reglas del mölkky. Arrastra, apunta y suelta: el palo se desliza hacia los bolos, o pasa por encima de los de adelante con un globo. Un bolo vale su número, varios valen su cantidad, y pasarte de 50 te regresa a 25.",
+      "Fifty es un juego de tiro con las reglas del mölkky. Arrastra, apunta y suelta: el palo se desliza hacia los bolos, o pasa por encima de los de adelante con un globo. Un bolo vale su número, varios valen su cantidad, y pasarte de 50 te regresa a 25.",
       "Cada día hay un reto nuevo, el mismo para todos: llega a exactamente 50 en la menor cantidad de tiros. Después practica todo lo que quieras, o juega un juego completo desde la formación de salida."
     ],
     "storesNote": "La app llegará pronto a la App Store y a Google Play.",
@@ -54,13 +55,23 @@
         "title": "Funciona sin conexión",
         "text": "Los retos se crean en tu celular, así que puedes jugar sin conexión."
       }
-    ]
+    ],
+    "related": {
+      "title": "También de Fifty",
+      "items": [
+        {
+          "slug": "molkky",
+          "name": "Fifty – Mölkky marcador",
+          "text": "¿Juegas mölkky de verdad en el patio? Toca los bolos caídos y la app lleva el puntaje y sigue las reglas."
+        }
+      ]
+    }
   },
   "privacy": {
     "heading": "Aviso de privacidad",
-    "description": "Cómo trata los datos la app Fifty Mölkkypeli: sin cuentas, los datos se quedan en tu dispositivo, anuncios con Google AdMob, opciones de consentimiento y cómo borrar tus datos.",
+    "description": "Cómo trata los datos la app Fifty – Mölkky juego: sin cuentas, los datos se quedan en tu dispositivo, anuncios con Google AdMob, opciones de consentimiento y cómo borrar tus datos.",
     "intro": [
-      "Este aviso explica qué hace la app Fifty Mölkkypeli (“la app”) con la información. La mantuvimos sencilla a propósito: no hay cuentas de usuario y no tenemos ningún servidor que recopile tus datos."
+      "Este aviso explica qué hace la app Fifty – Mölkky juego (“la app”) con la información. La mantuvimos sencilla a propósito: no hay cuentas de usuario y no tenemos ningún servidor que recopile tus datos."
     ],
     "sections": [
       {
@@ -162,9 +173,9 @@
   },
   "support": {
     "heading": "Soporte",
-    "description": "Ayuda para Fifty Mölkkypeli: cómo tirar, el puntaje, el reto diario, qué pasa con tus resultados si cambias de celular y la privacidad de los anuncios.",
+    "description": "Ayuda para el juego de mölkky Fifty: cómo tirar, el puntaje, el reto diario, qué pasa con tus resultados si cambias de celular y la privacidad de los anuncios.",
     "intro": [
-      "Respuestas a las preguntas más comunes sobre Fifty Mölkkypeli. Si no encuentras la tuya, escríbenos."
+      "Respuestas a las preguntas más comunes sobre el juego de mölkky Fifty. Si no encuentras la tuya, escríbenos."
     ],
     "faq": [
       {

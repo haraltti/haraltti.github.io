@@ -30,13 +30,41 @@
     "storesNote": "The app is on its way to the App Store and Google Play.",
     "featuresTitle": "What you get",
     "features": [
-      { "title": "Tap the pins", "text": "The 12 pins are laid out like the real ones. Tap the pins that fell and confirm: one pin scores its number, several score their count." },
-      { "title": "Rules done for you", "text": "Exactly 50 wins, over 50 drops you to 25, three misses in a row are out. Undo any throw, even after a win." },
-      { "title": "“What do you need?”", "text": "Always see how many points the player needs to win, and how to get them with one pin or a few." },
-      { "title": "Made for the outdoors", "text": "Large touch targets, a high-contrast sun mode, a screen that stays on and a design that is easy to read at arm’s length." },
-      { "title": "No account", "text": "No sign-up, no login. Your games and players stay on your phone." },
-      { "title": "Works offline", "text": "Play anywhere, even without a connection. The game is saved after every throw, so a phone call never loses your game." }
-    ]
+      {
+        "title": "Tap the pins",
+        "text": "The 12 pins are laid out like the real ones. Tap the pins that fell and confirm: one pin scores its number, several score their count."
+      },
+      {
+        "title": "Rules done for you",
+        "text": "Exactly 50 wins, over 50 drops you to 25, three misses in a row are out. Undo any throw, even after a win."
+      },
+      {
+        "title": "“What do you need?”",
+        "text": "Always see how many points the player needs to win, and how to get them with one pin or a few."
+      },
+      {
+        "title": "Made for the outdoors",
+        "text": "Large touch targets, a high-contrast sun mode, a screen that stays on and a design that is easy to read at arm’s length."
+      },
+      {
+        "title": "No account",
+        "text": "No sign-up, no login. Your games and players stay on your phone."
+      },
+      {
+        "title": "Works offline",
+        "text": "Play anywhere, even without a connection. The game is saved after every throw, so a phone call never loses your game."
+      }
+    ],
+    "related": {
+      "title": "Also from Fifty",
+      "items": [
+        {
+          "slug": "molkkygame",
+          "name": "Fifty – Mölkky Game",
+          "text": "No pins at hand? Throw on your phone: a new Mölkky puzzle every day, the same for everyone."
+        }
+      ]
+    }
   },
   "privacy": {
     "heading": "Privacy policy",
@@ -58,7 +86,9 @@
       },
       {
         "h": "What stays on your device",
-        "p": ["The app stores the following only on your phone. We cannot see it and it is never uploaded:"],
+        "p": [
+          "The app stores the following only on your phone. We cannot see it and it is never uploaded:"
+        ],
         "ul": [
           "games in progress and finished games (scores and throws),",
           "the players you add (names and colours),",
@@ -97,7 +127,9 @@
       },
       {
         "h": "Advertising ID on Android",
-        "p": ["On Android you can reset or delete your advertising ID, and opt out of ad personalisation, in your phone’s settings (usually under Privacy → Ads)."]
+        "p": [
+          "On Android you can reset or delete your advertising ID, and opt out of ad personalisation, in your phone’s settings (usually under Privacy → Ads)."
+        ]
       },
       {
         "h": "App updates",
@@ -127,22 +159,30 @@
       },
       {
         "h": "Changes to this policy",
-        "p": ["If the app changes in a way that affects your data, we will update this page and the date at the top."]
+        "p": [
+          "If the app changes in a way that affects your data, we will update this page and the date at the top."
+        ]
       },
       {
         "h": "Contact",
-        "p": ["Publisher and data controller: Harri Heikkilä, Finland. Questions about privacy: {email}."]
+        "p": [
+          "Publisher and data controller: Harri Heikkilä, Finland. Questions about privacy: {email}."
+        ]
       }
     ]
   },
   "support": {
     "heading": "Support",
     "description": "Help for the Fifty app: the rules in short, house rules, what happens to your data when you change phones, and ad privacy settings.",
-    "intro": ["Answers to common questions about Fifty. If you do not find yours, write to us."],
+    "intro": [
+      "Answers to common questions about Fifty. If you do not find yours, write to us."
+    ],
     "faq": [
       {
         "q": "How do the rules work?",
-        "a": ["The official Mölkky rules, in short:"],
+        "a": [
+          "The official Mölkky rules, in short:"
+        ],
         "ul": [
           "Knock down one pin and you score its number. Knock down two or more and you score the number of pins that fell.",
           "Be the first to reach exactly 50. If you go over 50, your score drops back to 25.",
@@ -152,7 +192,9 @@
       },
       {
         "q": "Can I use my own house rules?",
-        "a": ["Yes. Before a game starts, the Rules screen lets you change:"],
+        "a": [
+          "Yes. Before a game starts, the Rules screen lets you change:"
+        ],
         "ul": [
           "the target score (20–100),",
           "whether going over drops you back, and to what score,",
@@ -163,15 +205,21 @@
       },
       {
         "q": "What does the Foul button do?",
-        "a": ["Use it when a throw breaks the rules, for example when you step over the throwing line. It scores 0 points and counts as a miss."]
+        "a": [
+          "Use it when a throw breaks the rules, for example when you step over the throwing line. It scores 0 points and counts as a miss."
+        ]
       },
       {
         "q": "Does the app need an internet connection?",
-        "a": ["No. Everything works offline, including the how-to-play guide. An internet connection is only used to show ads and to check for app updates."]
+        "a": [
+          "No. Everything works offline, including the how-to-play guide. An internet connection is only used to show ads and to check for app updates."
+        ]
       },
       {
         "q": "I closed the app in the middle of a game. Is the game lost?",
-        "a": ["No. The game is saved after every throw. Open the app and choose **Continue game**."]
+        "a": [
+          "No. The game is saved after every throw. Open the app and choose **Continue game**."
+        ]
       },
       {
         "q": "What happens to my games and players when I change phones?",
@@ -189,14 +237,20 @@
       },
       {
         "q": "How do I delete my data?",
-        "a": ["Delete the app from your phone. All games, players, settings and the background picture are removed with it."]
+        "a": [
+          "Delete the app from your phone. All games, players, settings and the background picture are removed with it."
+        ]
       },
       {
         "q": "The text does not fit or something looks wrong.",
-        "a": ["Please tell us which phone and language you use, and what you saw. A screenshot helps."]
+        "a": [
+          "Please tell us which phone and language you use, and what you saw. A screenshot helps."
+        ]
       }
     ],
     "contactTitle": "Contact",
-    "contactText": ["Questions, bug reports and feedback: {email}. We answer as soon as we can."]
+    "contactText": [
+      "Questions, bug reports and feedback: {email}. We answer as soon as we can."
+    ]
   }
 }

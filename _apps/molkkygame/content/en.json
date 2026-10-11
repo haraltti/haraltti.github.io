@@ -1,6 +1,7 @@
 {
   "htmlLang": "en",
   "label": "English",
+  "appName": "Fifty – Mölkky Game",
   "ui": {
     "skip": "Skip to content",
     "languageLabel": "Language",
@@ -19,12 +20,12 @@
     "mascotAlt": "Nalle the bear swinging the throwing stick underhand"
   },
   "home": {
-    "title": "Fifty Mölkkypeli – a Mölkky throwing game with a daily puzzle",
+    "title": "Fifty – Mölkky Game with a daily puzzle",
     "description": "Throw the stick, knock down the pins and land on exactly 50. A new puzzle every day, the same for everyone. No account, works offline.",
-    "heading": "Fifty Mölkkypeli",
+    "heading": "Fifty – Mölkky Game",
     "tagline": "Land on exactly 50.",
     "intro": [
-      "Fifty Mölkkypeli is a throwing game with the rules of Mölkky. Drag, aim and release: the stick slides into the pins, or flies over the front ones with a lob. One pin scores its number, several score their count, and going over 50 drops you back to 25.",
+      "Fifty is a throwing game with the rules of Mölkky. Drag, aim and release: the stick slides into the pins, or flies over the front ones with a lob. One pin scores its number, several score their count, and going over 50 drops you back to 25.",
       "Every day brings one new puzzle, the same for every player: reach exactly 50 in as few throws as you can. Then practise as much as you like, or play a full game from the starting formation."
     ],
     "storesNote": "The app is on its way to the App Store and Google Play.",
@@ -54,13 +55,23 @@
         "title": "Works offline",
         "text": "The puzzles are made on your phone, so you can play without a connection."
       }
-    ]
+    ],
+    "related": {
+      "title": "Also from Fifty",
+      "items": [
+        {
+          "slug": "molkky",
+          "name": "Fifty – Mölkky Score Keeper",
+          "text": "Playing real Mölkky in the yard? Tap the fallen pins and the app keeps the score and follows the rules."
+        }
+      ]
+    }
   },
   "privacy": {
     "heading": "Privacy policy",
-    "description": "How the Fifty Mölkkypeli app handles data: no accounts, data stays on your device, ads through Google AdMob, consent choices and how to delete your data.",
+    "description": "How the Fifty – Mölkky Game app handles data: no accounts, data stays on your device, ads through Google AdMob, consent choices and how to delete your data.",
     "intro": [
-      "This policy explains what the Fifty Mölkkypeli app (“the app”) does with information. We have kept the app simple on purpose: there are no user accounts, and we do not run a server that collects your data."
+      "This policy explains what the Fifty – Mölkky Game app (“the app”) does with information. We have kept the app simple on purpose: there are no user accounts, and we do not run a server that collects your data."
     ],
     "sections": [
       {
@@ -162,9 +173,9 @@
   },
   "support": {
     "heading": "Support",
-    "description": "Help for Fifty Mölkkypeli: how to throw, scoring, the daily puzzle, what happens to your results when you change phones, and ad privacy settings.",
+    "description": "Help for the Fifty Mölkky game: how to throw, scoring, the daily puzzle, what happens to your results when you change phones, and ad privacy settings.",
     "intro": [
-      "Answers to common questions about Fifty Mölkkypeli. If you do not find yours, write to us."
+      "Answers to common questions about the Fifty Mölkky game. If you do not find yours, write to us."
     ],
     "faq": [
       {
