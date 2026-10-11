@@ -1,0 +1,239 @@
+{
+  "htmlLang": "fi",
+  "label": "Suomi",
+  "ui": {
+    "skip": "Siirry sisältöön",
+    "languageLabel": "Kieli",
+    "navHome": "Etusivu",
+    "navPrivacy": "Tietosuojaseloste",
+    "navSupport": "Tuki",
+    "footerNav": "Alatunniste",
+    "contact": "Yhteystiedot",
+    "updated": "Päivitetty viimeksi",
+    "updatedDate": "11. lokakuuta 2026",
+    "comingSoon": "Tulossa pian",
+    "downloadOn": "Lataa kaupasta",
+    "getItOn": "Lataa kaupasta",
+    "appStore": "App Store",
+    "googlePlay": "Google Play",
+    "mascotAlt": "Nalle-karhu heittää kapulaa alakautta"
+  },
+  "home": {
+    "title": "Fifty Mölkkypeli – heittopeli mölkyn säännöillä ja päivän pulma",
+    "description": "Heitä kapulaa, kaada keiloja ja osu tasan 50 pisteeseen. Joka päivä uusi pulma, sama kaikille. Ei tiliä, toimii ilman verkkoa.",
+    "heading": "Fifty Mölkkypeli",
+    "tagline": "Osu tasan viiteenkymmeneen.",
+    "intro": [
+      "Fifty Mölkkypeli on heittopeli mölkyn säännöillä. Vedä, tähtää ja päästä irti: kapula liukuu keiloihin tai lentää kaariheitolla etummaisten yli. Yksi keila antaa numeronsa verran pisteitä, useampi kaatuneiden määrän, ja yli 50 pudottaa takaisin 25:een.",
+      "Joka päivä on yksi uusi pulma, sama kaikille pelaajille: pääse tasan 50 pisteeseen mahdollisimman harvalla heitolla. Sen jälkeen voit harjoitella niin paljon kuin haluat tai pelata koko pelin aloitusasetelmasta."
+    ],
+    "storesNote": "Appi on tulossa App Storeen ja Google Playhin.",
+    "featuresTitle": "Mitä saat",
+    "features": [
+      {
+        "title": "Päivän pulma",
+        "text": "Yksi uusi asetelma päivässä, sama kaikille. Saat yhden yrityksen ja tavoitteen, joka pitää voittaa."
+      },
+      {
+        "title": "Kaksi heittoa",
+        "text": "Matala heitto liukuu maata pitkin. Kaariheitto lentää edessä olevien keilojen yli ja putoaa tähtäämääsi kohtaan."
+      },
+      {
+        "title": "Oikean mölkyn pisteet",
+        "text": "Tasan 50 voittaa, yli 50 pudottaa 25:een ja kolme ohiheittoa peräkkäin päättää pelin. Kaatuneet keilat nousevat pystyyn siihen, mihin ne liukuivat."
+      },
+      {
+        "title": "Putki ja jakaminen",
+        "text": "Pidä yllä ratkaistujen päivien putkea ja jaa tuloksesi lyhyenä tekstinä."
+      },
+      {
+        "title": "Ei tiliä",
+        "text": "Ei rekisteröitymistä eikä kirjautumista. Tulokset pysyvät puhelimessasi."
+      },
+      {
+        "title": "Toimii ilman verkkoa",
+        "text": "Pulmat syntyvät puhelimessasi, joten voit pelata ilman yhteyttä."
+      }
+    ]
+  },
+  "privacy": {
+    "heading": "Tietosuojaseloste",
+    "description": "Näin Fifty Mölkkypeli -appi käsittelee tietoja: ei käyttäjätilejä, tiedot pysyvät laitteellasi, mainokset Google AdMobin kautta, suostumusvalinnat ja tietojen poistaminen.",
+    "intro": [
+      "Tässä selosteessa kerrotaan, mitä Fifty Mölkkypeli -appi (”appi”) tekee tiedoilla. Appi on tehty tarkoituksella yksinkertaiseksi: käyttäjätilejä ei ole, eikä meillä ole palvelinta, joka keräisi tietojasi."
+    ],
+    "sections": [
+      {
+        "h": "Lyhyesti",
+        "ul": [
+          "Ei käyttäjätilejä eikä rekisteröitymistä.",
+          "Päivän pulmien tulokset, asetukset ja taustakuva tallentuvat vain laitteellesi.",
+          "Appi on ilmainen ja näyttää mainoksia Google AdMobin kautta. Google käsittelee joitakin tietoja mainosten näyttämiseksi ja mittaamiseksi (ks. alla).",
+          "Euroopassa appi kysyy ensin suostumustasi, ja iPhonella se voi kysyä myös seurantalupaa.",
+          "Appia ei ole suunnattu alle 13-vuotiaille.",
+          "Kun poistat apin, kaikki apin tallentamat tiedot poistuvat."
+        ]
+      },
+      {
+        "h": "Mitä jää laitteellesi",
+        "p": [
+          "Appi tallentaa seuraavat tiedot vain puhelimeesi. Emme näe niitä, eikä niitä koskaan lähetetä minnekään:"
+        ],
+        "ul": [
+          "pelaamasi päivän pulmat (heitot, tulos ja putki),",
+          "asetukset (kieli, teema, korostusväri, värinä, mainossuostumuksen tila),",
+          "taustakuva, jos valitset sellaisen. Valitset kuvan järjestelmän kuvavalitsimella, ja appi säilyttää siitä yksityisen kopion omassa tallennustilassaan."
+        ]
+      },
+      {
+        "h": "Mainokset ja Google AdMob",
+        "p": [
+          "Appi on ilmainen, ja sitä rahoittavat mainokset. Mainokset tuottaa Google AdMob (Google). Mainosten näyttämistä, mittaamista ja suojaamista varten Google voi kerätä ja käyttää:"
+        ],
+        "ul": [
+          "laitetunnisteita, kuten mainostunnusta,",
+          "IP-osoitettasi ja siitä johdettua likimääräistä sijaintia,",
+          "apin ja mainosten käyttö- ja diagnostiikkatietoja, kuten mainosten katselu- ja vuorovaikutustietoja, laitemallia ja käyttöjärjestelmän versiota."
+        ],
+        "after": [
+          "Google kerää ja käsittelee nämä tiedot omien käytäntöjensä mukaisesti. Emme saa niitä itse, vaan näemme vain yhteenvetotilastoja, kuten mainosnäyttöjen määrän. Lue lisää: [Miten Google käyttää tietoja sivustoilta tai sovelluksista, joissa sen palveluita käytetään](https://policies.google.com/technologies/partner-sites) ja [Googlen tietosuojakäytäntö](https://policies.google.com/privacy).",
+          "Mainokset näkyvät bannerina peliruudussa, koko ruudun mainoksena pelin jälkeen ja mainoksena apin avautuessa. Mainosta ei koskaan näytetä kesken heiton."
+        ]
+      },
+      {
+        "h": "Suostumusvalintasi",
+        "p": [
+          "Euroopan talousalueella, Isossa-Britanniassa ja muilla alueilla, joilla laki sitä vaatii, appi näyttää Googlen suostumuslomakkeen (UMP, User Messaging Platform) ennen ensimmäistä mainospyyntöä. Valintasi ratkaisee, saako mainoksia personoida.",
+          "Voit tarkistaa tai muuttaa valintaasi milloin tahansa apissa: **Asetukset → Mainokset ja tietosuoja → Mainosten tietosuoja-asetukset** (näkyy alueilla, joilla suostumus koskee sinua)."
+        ]
+      },
+      {
+        "h": "Seurantalupa iPhonella",
+        "p": [
+          "Suostumuslomakkeen jälkeen appi voi pyytää lupaa seurata sinua muiden yritysten appien ja verkkosivustojen välillä (Applen App Tracking Transparency). Jos kieltäydyt, voit silti käyttää koko appia ja näet edelleen mainoksia, mutta niitä ei personoida tällaisen seurannan avulla.",
+          "Voit muuttaa valintaa myöhemmin iOS:n **Asetukset → Tietosuoja ja turvallisuus → Seuranta** -kohdassa tai apin omalla asetussivulla iOS:n Asetuksissa."
+        ]
+      },
+      {
+        "h": "Mainostunnus Androidilla",
+        "p": [
+          "Androidilla voit nollata tai poistaa mainostunnuksesi ja kieltää mainosten personoinnin puhelimen asetuksissa (yleensä kohdassa Tietosuoja → Mainokset)."
+        ]
+      },
+      {
+        "h": "Apin päivitykset",
+        "p": [
+          "Appi voi saada koodinsa päivityksiä langattomasti Expon EAS Update -palvelun kautta. Kun appi käynnistyy, se ottaa yhteyden Expon palvelimiin tarkistaakseen päivitykset. Kuten jokainen internet-yhteys, tämä kertoo Expolle teknisiä tietoja, kuten IP-osoitteesi, alustan ja apin version. Emme saa tätä kautta henkilötietoja. Katso [Expon tietosuojakäytäntö](https://expo.dev/privacy)."
+        ]
+      },
+      {
+        "h": "Lapset",
+        "p": [
+          "Appi on tarkoitettu koko perheelle, mutta sitä ei ole suunnattu alle 13-vuotiaille, emmekä tietoisesti kerää henkilötietoja alle 13-vuotiailta lapsilta. Appi ilmoittaa Googlelle, ettei se ole lapsille suunnattu, ja rajaa mainokset PG-luokituksen tai lievemmän sisältöön.",
+          "Jos uskot, että lapsi on antanut meille henkilötietoja, ota yhteyttä, niin autamme."
+        ]
+      },
+      {
+        "h": "Tietojesi poistaminen",
+        "p": [
+          "Emme säilytä tietojasi palvelimella, joten meillä ei ole mitään poistettavaa. Kun poistat apin puhelimestasi, kaikki tulokset, asetukset ja taustakuva poistuvat sen mukana.",
+          "Googlen mainoksia varten säilyttämiä tietoja hallitaan Google-tililläsi, [Omat mainoskeskus](https://myadcenter.google.com/) -palvelussa."
+        ]
+      },
+      {
+        "h": "Oikeutesi",
+        "p": [
+          "Koska emme käsittele henkilötietojasi itse, mainoksiin käytettyjä tietoja koskevat pyynnöt kannattaa osoittaa Googlelle, joka on niiden itsenäinen rekisterinpitäjä. Kaikessa muussa voit ottaa meihin yhteyttä, niin vastaamme."
+        ]
+      },
+      {
+        "h": "Muutokset selosteeseen",
+        "p": [
+          "Jos appi muuttuu tavalla, joka vaikuttaa tietoihisi, päivitämme tämän sivun ja yläreunan päivämäärän."
+        ]
+      },
+      {
+        "h": "Yhteystiedot",
+        "p": [
+          "Julkaisija ja rekisterinpitäjä: Harri Heikkilä, Suomi. Kysymykset tietosuojasta: {email}."
+        ]
+      }
+    ]
+  },
+  "support": {
+    "heading": "Tuki",
+    "description": "Apua Fifty Mölkkypeliin: heittäminen, pisteytys, päivän pulma, mitä tuloksille käy puhelinta vaihdettaessa ja mainosten tietosuoja-asetukset.",
+    "intro": [
+      "Vastauksia yleisiin kysymyksiin Fifty Mölkkypelistä. Jos et löydä omaasi, kirjoita meille."
+    ],
+    "faq": [
+      {
+        "q": "Miten heitän?",
+        "a": [
+          "Vedä sormella pelikentällä alaspäin ja päästä irti. Vedon suunta määrää, minne kapula lähtee, ja pituus määrää voiman. Pisteviiva näyttää reitin ensimmäiseen osumaan asti.",
+          "Valitse **Kaariheitto**, kun haluat heittää edessä olevien keilojen yli: rengas näyttää, mihin kapula putoaa."
+        ]
+      },
+      {
+        "q": "Miten pisteet lasketaan?",
+        "a": [
+          "Pisteet lasketaan mölkyn säännöillä:"
+        ],
+        "ul": [
+          "Jos kaadat yhden keilan, saat sen numeron verran pisteitä. Jos kaadat kaksi tai useampia, saat kaatuneiden keilojen määrän verran pisteitä.",
+          "Tasan 50 pistettä voittaa. Jos menet yli 50:n, pisteesi putoavat takaisin 25:een.",
+          "Kolme ohiheittoa peräkkäin päättää pelin. Pisteitä tuottava heitto nollaa laskurin.",
+          "Kaatuneet keilat nousevat pystyyn siihen, mihin ne liukuivat, joten jokainen heitto muuttaa kenttää."
+        ]
+      },
+      {
+        "q": "Miksi päivän pulman voi pelata vain kerran?",
+        "a": [
+          "Päivän pulma on sama kaikille, joten jokainen saa yhden yrityksen. Heittosi tallentuvat pelin aikana, ja pulma jatkuu samasta kohdasta, jos suljet apin. **Harjoitus** ja **Koko peli** ovat pelattavissa niin monta kertaa kuin haluat."
+        ]
+      },
+      {
+        "q": "Mikä pulmassa näkyvä tavoite on?",
+        "a": [
+          "Se on apin löytämä heittomäärä, jolla pulman voi ratkaista. Se on tavoite eikä raja: hyvällä heitolla sen voi alittaa."
+        ]
+      },
+      {
+        "q": "Tarvitseeko appi nettiyhteyden?",
+        "a": [
+          "Ei. Kaikki toimii ilman verkkoa, myös pelin ohjeet. Nettiyhteyttä käytetään vain mainosten näyttämiseen ja apin päivitysten tarkistamiseen."
+        ]
+      },
+      {
+        "q": "Mitä tuloksilleni tapahtuu, kun vaihdan puhelinta?",
+        "a": [
+          "Tiliä tai pilvisynkronointia ei ole, joten appi ei siirrä tietojasi uuteen puhelimeen itse. Tulokset, putki ja asetukset tallentuvat vain laitteelle.",
+          "Jos palautat vanhan puhelimesi täyden varmuuskopion (iCloud tai Googlen varmuuskopio), apin tiedot voivat siirtyä mukana varmuuskopioasetuksistasi riippuen. Muuten aloitat uudessa puhelimessa alusta."
+        ]
+      },
+      {
+        "q": "Miten muutan mainosten tietosuoja-asetuksia?",
+        "a": [
+          "Avaa apissa **Asetukset → Mainokset ja tietosuoja**. Alueilla, joilla suostumus koskee sinua (esimerkiksi EU:ssa), siellä on **Mainosten tietosuoja-asetukset** -painike, joka avaa Googlen suostumuslomakkeen uudelleen.",
+          "iPhonella voit muuttaa seurantalupaa myös iOS:n Asetukset → Tietosuoja ja turvallisuus → Seuranta -kohdassa. Androidilla voit nollata mainostunnuksesi puhelimen asetuksissa. Lisätietoja [tietosuojaselosteessa](page:privacy)."
+        ]
+      },
+      {
+        "q": "Miten poistan tietoni?",
+        "a": [
+          "Poista appi puhelimestasi. Kaikki tulokset, asetukset ja taustakuva poistuvat sen mukana."
+        ]
+      },
+      {
+        "q": "Teksti ei mahdu tai jokin näyttää väärältä.",
+        "a": [
+          "Kerro meille, mitä puhelinta ja kieltä käytät ja mitä näit. Kuvakaappauksesta on apua."
+        ]
+      }
+    ],
+    "contactTitle": "Yhteystiedot",
+    "contactText": [
+      "Kysymykset, virheilmoitukset ja palaute: {email}. Vastaamme mahdollisimman pian."
+    ]
+  }
+}

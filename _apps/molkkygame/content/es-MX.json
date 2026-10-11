@@ -1,0 +1,239 @@
+{
+  "htmlLang": "es-MX",
+  "label": "Español",
+  "ui": {
+    "skip": "Ir al contenido",
+    "languageLabel": "Idioma",
+    "navHome": "Inicio",
+    "navPrivacy": "Privacidad",
+    "navSupport": "Soporte",
+    "footerNav": "Pie de página",
+    "contact": "Contacto",
+    "updated": "Última actualización",
+    "updatedDate": "11 de octubre de 2026",
+    "comingSoon": "Próximamente",
+    "downloadOn": "Descárgala en la",
+    "getItOn": "Disponible en",
+    "appStore": "App Store",
+    "googlePlay": "Google Play",
+    "mascotAlt": "Nalle, el oso, lanza el palo desde abajo"
+  },
+  "home": {
+    "title": "Fifty Mölkkypeli – un juego de tiro con las reglas del mölkky y un reto diario",
+    "description": "Lanza el palo, tira los bolos y llega a 50 exactos. Un reto nuevo cada día, el mismo para todos. Sin cuenta, funciona sin conexión.",
+    "heading": "Fifty Mölkkypeli",
+    "tagline": "Llega a 50 exactos.",
+    "intro": [
+      "Fifty Mölkkypeli es un juego de tiro con las reglas del mölkky. Arrastra, apunta y suelta: el palo se desliza hacia los bolos, o pasa por encima de los de adelante con un globo. Un bolo vale su número, varios valen su cantidad, y pasarte de 50 te regresa a 25.",
+      "Cada día hay un reto nuevo, el mismo para todos: llega a exactamente 50 en la menor cantidad de tiros. Después practica todo lo que quieras, o juega un juego completo desde la formación de salida."
+    ],
+    "storesNote": "La app llegará pronto a la App Store y a Google Play.",
+    "featuresTitle": "Lo que obtienes",
+    "features": [
+      {
+        "title": "Un reto diario",
+        "text": "Una disposición nueva al día, la misma para todos. Tienes un solo intento y una meta que superar."
+      },
+      {
+        "title": "Dos tiros",
+        "text": "El tiro bajo se desliza por el suelo. El globo pasa por encima de los bolos de adelante y cae donde apuntas."
+      },
+      {
+        "title": "Puntaje del mölkky real",
+        "text": "50 exactos ganan, más de 50 te regresa a 25 y tres fallos seguidos terminan el juego. Los bolos caídos se levantan donde quedaron."
+      },
+      {
+        "title": "Racha y compartir",
+        "text": "Mantén tu racha de días resueltos y comparte tu resultado como un texto corto."
+      },
+      {
+        "title": "Sin cuenta",
+        "text": "Sin registro ni inicio de sesión. Tus resultados se quedan en tu celular."
+      },
+      {
+        "title": "Funciona sin conexión",
+        "text": "Los retos se crean en tu celular, así que puedes jugar sin conexión."
+      }
+    ]
+  },
+  "privacy": {
+    "heading": "Aviso de privacidad",
+    "description": "Cómo trata los datos la app Fifty Mölkkypeli: sin cuentas, los datos se quedan en tu dispositivo, anuncios con Google AdMob, opciones de consentimiento y cómo borrar tus datos.",
+    "intro": [
+      "Este aviso explica qué hace la app Fifty Mölkkypeli (“la app”) con la información. La mantuvimos sencilla a propósito: no hay cuentas de usuario y no tenemos ningún servidor que recopile tus datos."
+    ],
+    "sections": [
+      {
+        "h": "En resumen",
+        "ul": [
+          "No hay cuentas de usuario ni registro.",
+          "Tus resultados de los retos diarios, tus ajustes y tu imagen de fondo se guardan solo en tu dispositivo.",
+          "La app es gratuita y muestra anuncios mediante Google AdMob. Google procesa algunos datos para mostrar y medir los anuncios (ver más abajo).",
+          "En Europa la app primero pide tu consentimiento y, en iPhone, también puede pedirte permiso de rastreo.",
+          "La app no está dirigida a menores de 13 años.",
+          "Al borrar la app se borran todos los datos que guardó."
+        ]
+      },
+      {
+        "h": "Lo que se queda en tu dispositivo",
+        "p": [
+          "La app guarda lo siguiente solo en tu celular. Nosotros no lo vemos y nunca se sube a ningún lado:"
+        ],
+        "ul": [
+          "los retos diarios que has jugado (tus tiros, el resultado y tu racha),",
+          "tus ajustes (idioma, tema, color de acento, vibración, el estado del consentimiento de anuncios),",
+          "una imagen de fondo, si eliges una. La seleccionas con el selector de fotos del sistema y la app guarda una copia privada en su propio almacenamiento."
+        ]
+      },
+      {
+        "h": "Anuncios y Google AdMob",
+        "p": [
+          "La app es gratuita y se sostiene con anuncios. Los anuncios los proporciona Google AdMob (Google). Para mostrar, medir y proteger los anuncios, Google puede recopilar y usar:"
+        ],
+        "ul": [
+          "identificadores del dispositivo, como el ID de publicidad,",
+          "tu dirección IP y la ubicación aproximada que se deduce de ella,",
+          "información de uso y de diagnóstico sobre la app y los anuncios, como las visualizaciones e interacciones, el modelo del dispositivo y la versión del sistema operativo."
+        ],
+        "after": [
+          "Google recopila y procesa estos datos conforme a sus propias políticas. Nosotros no los recibimos; solo vemos estadísticas resumidas, como el número de anuncios mostrados. Conoce más en [Cómo usa Google la información de sitios o apps que utilizan sus servicios](https://policies.google.com/technologies/partner-sites) y en la [Política de Privacidad de Google](https://policies.google.com/privacy).",
+          "Los anuncios aparecen como banner en la pantalla de juego, como anuncio de pantalla completa después de una partida y como anuncio al abrir la app. Nunca se muestra un anuncio en medio de un tiro."
+        ]
+      },
+      {
+        "h": "Tus opciones de consentimiento",
+        "p": [
+          "En el Espacio Económico Europeo, el Reino Unido y otras regiones donde la ley lo exige, la app muestra el formulario de consentimiento de Google (UMP, User Messaging Platform) antes de la primera solicitud de anuncios. Tu elección decide si los anuncios pueden personalizarse.",
+          "Puedes revisar o cambiar tu elección en cualquier momento en la app: **Configuración → Anuncios y privacidad → Privacidad de los anuncios** (aparece donde aplica el consentimiento)."
+        ]
+      },
+      {
+        "h": "Permiso de rastreo en iPhone",
+        "p": [
+          "Después del formulario de consentimiento, la app puede pedirte permiso para rastrearte en apps y sitios web de otras empresas (App Tracking Transparency de Apple). Si dices que no, puedes seguir usando toda la app y sigues viendo anuncios, pero no se personalizan con ese tipo de rastreo.",
+          "Puedes cambiarlo después en **Ajustes → Privacidad y seguridad → Rastreo** de iOS, o en la página de ajustes de la app dentro de Ajustes."
+        ]
+      },
+      {
+        "h": "ID de publicidad en Android",
+        "p": [
+          "En Android puedes restablecer o borrar tu ID de publicidad y rechazar la personalización de anuncios en la configuración de tu celular (normalmente en Privacidad → Anuncios)."
+        ]
+      },
+      {
+        "h": "Actualizaciones de la app",
+        "p": [
+          "La app puede recibir actualizaciones de su código a distancia mediante el servicio EAS Update de Expo. Al iniciarse, la app se conecta a los servidores de Expo para ver si hay una actualización. Como cualquier conexión a internet, esto le revela a Expo información técnica, como tu dirección IP, la plataforma y la versión de la app. No recibimos información personal por esta vía. Consulta la [política de privacidad de Expo](https://expo.dev/privacy)."
+        ]
+      },
+      {
+        "h": "Menores de edad",
+        "p": [
+          "La app es para toda la familia, pero no está dirigida a menores de 13 años y no recopilamos a sabiendas información personal de menores de 13 años. La app le indica a Google que no está dirigida a menores y limita los anuncios a contenido clasificado PG o más suave.",
+          "Si crees que un menor nos dio información personal, contáctanos y te ayudaremos."
+        ]
+      },
+      {
+        "h": "Cómo borrar tus datos",
+        "p": [
+          "No guardamos tus datos en ningún servidor, así que no hay nada que borrar de nuestro lado. Al borrar la app de tu celular se eliminan todos los resultados, los ajustes y la imagen de fondo.",
+          "Los datos que Google conserva para los anuncios se administran en tu cuenta de Google, en [Mi Centro de anuncios](https://myadcenter.google.com/)."
+        ]
+      },
+      {
+        "h": "Tus derechos",
+        "p": [
+          "Como nosotros no procesamos tus datos personales, las solicitudes sobre los datos usados para los anuncios deben dirigirse a Google, que es el responsable independiente de ellos. Para cualquier otra cosa, puedes contactarnos y te responderemos."
+        ]
+      },
+      {
+        "h": "Cambios a este aviso",
+        "p": [
+          "Si la app cambia de una forma que afecte tus datos, actualizaremos esta página y la fecha de arriba."
+        ]
+      },
+      {
+        "h": "Contacto",
+        "p": [
+          "Editor y responsable del tratamiento de datos: Harri Heikkilä, Finlandia. Preguntas sobre privacidad: {email}."
+        ]
+      }
+    ]
+  },
+  "support": {
+    "heading": "Soporte",
+    "description": "Ayuda para Fifty Mölkkypeli: cómo tirar, el puntaje, el reto diario, qué pasa con tus resultados si cambias de celular y la privacidad de los anuncios.",
+    "intro": [
+      "Respuestas a las preguntas más comunes sobre Fifty Mölkkypeli. Si no encuentras la tuya, escríbenos."
+    ],
+    "faq": [
+      {
+        "q": "¿Cómo tiro?",
+        "a": [
+          "Arrastra hacia abajo en el campo de juego y suelta. La dirección del gesto marca hacia dónde va el palo y su largo marca la fuerza. La línea punteada muestra el camino hasta el primer golpe.",
+          "Elige **Globo** para tirar por encima de los bolos de adelante: el círculo muestra dónde cae el palo."
+        ]
+      },
+      {
+        "q": "¿Cómo se cuentan los puntos?",
+        "a": [
+          "El puntaje sigue las reglas del mölkky:"
+        ],
+        "ul": [
+          "Si tiras un solo bolo, anotas el número que trae. Si tiras dos o más, anotas la cantidad de bolos caídos.",
+          "Con exactamente 50 puntos ganas. Si te pasas de 50, tu puntaje regresa a 25.",
+          "Tres fallos seguidos terminan el juego. Un tiro con puntos reinicia la cuenta.",
+          "Los bolos caídos se levantan donde quedaron, así que cada tiro cambia el campo."
+        ]
+      },
+      {
+        "q": "¿Por qué el reto diario solo se juega una vez?",
+        "a": [
+          "El reto diario es el mismo para todos, así que cada quien tiene un solo intento. Tus tiros se guardan mientras juegas, y el reto continúa donde lo dejaste si cierras la app. **Práctica** y **Juego completo** se pueden jugar todas las veces que quieras."
+        ]
+      },
+      {
+        "q": "¿Qué es la meta que aparece en el reto?",
+        "a": [
+          "Es una cantidad de tiros que resuelve el reto, encontrada por la app. Es algo a lo que apuntar, no un límite: un buen tiro puede superarla."
+        ]
+      },
+      {
+        "q": "¿La app necesita internet?",
+        "a": [
+          "No. Todo funciona sin conexión, incluida la guía para aprender a jugar. Internet solo se usa para mostrar anuncios y buscar actualizaciones de la app."
+        ]
+      },
+      {
+        "q": "¿Qué pasa con mis resultados si cambio de celular?",
+        "a": [
+          "No hay cuenta ni sincronización en la nube, así que la app no pasa tus datos a un celular nuevo por sí sola. Los resultados, la racha y los ajustes se guardan solo en el dispositivo.",
+          "Si restauras una copia de seguridad completa de tu celular anterior (iCloud o copia de Google), los datos de la app pueden venir incluidos, según tus ajustes de copia de seguridad. Si no, empiezas desde cero en el celular nuevo."
+        ]
+      },
+      {
+        "q": "¿Cómo cambio la privacidad de los anuncios?",
+        "a": [
+          "Abre **Configuración → Anuncios y privacidad** en la app. Donde aplica el consentimiento (por ejemplo, en la UE) hay un botón **Privacidad de los anuncios** que vuelve a abrir el formulario de consentimiento de Google.",
+          "En iPhone también puedes cambiar el permiso de rastreo en Ajustes → Privacidad y seguridad → Rastreo. En Android puedes restablecer tu ID de publicidad en la configuración del celular. Consulta el [aviso de privacidad](page:privacy) para ver los detalles."
+        ]
+      },
+      {
+        "q": "¿Cómo borro mis datos?",
+        "a": [
+          "Borra la app de tu celular. Todos los resultados, los ajustes y la imagen de fondo se eliminan con ella."
+        ]
+      },
+      {
+        "q": "Un texto se corta o algo se ve mal.",
+        "a": [
+          "Dinos qué celular e idioma usas y qué viste. Una captura de pantalla ayuda."
+        ]
+      }
+    ],
+    "contactTitle": "Contacto",
+    "contactText": [
+      "Preguntas, reportes de errores y comentarios: {email}. Respondemos lo antes posible."
+    ]
+  }
+}
