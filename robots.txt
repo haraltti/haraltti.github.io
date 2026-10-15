@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://haraltti.github.io/sitemap.xml
