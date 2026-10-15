@@ -26,7 +26,8 @@
     "tagline": "Land on exactly 50.",
     "intro": [
       "Fifty is a throwing game with the rules of Mölkky. Drag, aim and release: the stick slides into the pins, or flies over the front ones with a lob. One pin scores its number, several score their count, and going over 50 drops you back to 25.",
-      "Every day brings one new puzzle, the same for every player: reach exactly 50 in as few throws as you can. Then practise as much as you like, or play a full game from the starting formation."
+      "Every day brings one new puzzle, the same for every player: reach exactly 50 in as few throws as you can. Then practise as much as you like, or play a full game from the starting formation.",
+      "**[Play the daily puzzle in your browser](https://haraltti.github.io/molkkygame/play/)**, no installation needed."
     ],
     "storesNote": "The app is on its way to the App Store and Google Play.",
     "featuresTitle": "What you get",
@@ -71,7 +72,8 @@
     "heading": "Privacy policy",
     "description": "How the Fifty – Mölkky Game app handles data: no accounts, data stays on your device, ads through Google AdMob, consent choices and how to delete your data.",
     "intro": [
-      "This policy explains what the Fifty – Mölkky Game app (“the app”) does with information. We have kept the app simple on purpose: there are no user accounts, and we do not run a server that collects your data."
+      "This policy explains what the Fifty – Mölkky Game app (“the app”) does with information. We have kept the app simple on purpose: there are no user accounts, and we do not run a server that collects your data.",
+      "The game can also be played in a web browser at haraltti.github.io/molkkygame/play. The browser version shows no ads and collects no data: your results are stored only in your browser."
     ],
     "sections": [
       {

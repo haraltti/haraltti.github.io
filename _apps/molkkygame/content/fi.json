@@ -26,7 +26,8 @@
     "tagline": "Osu tasan viiteenkymmeneen.",
     "intro": [
       "Fifty Mölkkypeli on heittopeli mölkyn säännöillä. Vedä, tähtää ja päästä irti: kapula liukuu keiloihin tai lentää kaariheitolla etummaisten yli. Yksi keila antaa numeronsa verran pisteitä, useampi kaatuneiden määrän, ja yli 50 pudottaa takaisin 25:een.",
-      "Joka päivä on yksi uusi pulma, sama kaikille pelaajille: pääse tasan 50 pisteeseen mahdollisimman harvalla heitolla. Sen jälkeen voit harjoitella niin paljon kuin haluat tai pelata koko pelin aloitusasetelmasta."
+      "Joka päivä on yksi uusi pulma, sama kaikille pelaajille: pääse tasan 50 pisteeseen mahdollisimman harvalla heitolla. Sen jälkeen voit harjoitella niin paljon kuin haluat tai pelata koko pelin aloitusasetelmasta.",
+      "**[Pelaa päivän pulmaa selaimessa](https://haraltti.github.io/molkkygame/play/)**, ilman asennusta."
     ],
     "storesNote": "Appi on tulossa App Storeen ja Google Playhin.",
     "featuresTitle": "Mitä saat",
@@ -71,7 +72,8 @@
     "heading": "Tietosuojaseloste",
     "description": "Näin Fifty Mölkkypeli -appi käsittelee tietoja: ei käyttäjätilejä, tiedot pysyvät laitteellasi, mainokset Google AdMobin kautta, suostumusvalinnat ja tietojen poistaminen.",
     "intro": [
-      "Tässä selosteessa kerrotaan, mitä Fifty Mölkkypeli -appi (”appi”) tekee tiedoilla. Appi on tehty tarkoituksella yksinkertaiseksi: käyttäjätilejä ei ole, eikä meillä ole palvelinta, joka keräisi tietojasi."
+      "Tässä selosteessa kerrotaan, mitä Fifty Mölkkypeli -appi (”appi”) tekee tiedoilla. Appi on tehty tarkoituksella yksinkertaiseksi: käyttäjätilejä ei ole, eikä meillä ole palvelinta, joka keräisi tietojasi.",
+      "Peliä voi pelata myös selaimessa osoitteessa haraltti.github.io/molkkygame/play. Selainversio ei näytä mainoksia eikä kerää tietoja: tuloksesi tallentuvat vain selaimeesi."
     ],
     "sections": [
       {

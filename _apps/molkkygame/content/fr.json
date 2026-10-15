@@ -26,7 +26,8 @@
     "tagline": "Arrivez à 50 pile.",
     "intro": [
       "Fifty est un jeu de lancer aux règles du mölkky. Tirez, visez et relâchez : le mölkky glisse vers les quilles, ou passe au-dessus des premières avec un lob. Une quille rapporte son numéro, plusieurs rapportent leur nombre, et dépasser 50 vous ramène à 25.",
-      "Chaque jour apporte un nouveau défi, le même pour tous les joueurs : atteindre exactement 50 en aussi peu de lancers que possible. Ensuite, entraînez-vous autant que vous voulez, ou jouez une partie complète depuis la disposition de départ."
+      "Chaque jour apporte un nouveau défi, le même pour tous les joueurs : atteindre exactement 50 en aussi peu de lancers que possible. Ensuite, entraînez-vous autant que vous voulez, ou jouez une partie complète depuis la disposition de départ.",
+      "**[Joue au défi du jour dans ton navigateur](https://haraltti.github.io/molkkygame/play/)**, sans installation."
     ],
     "storesNote": "L’application arrive bientôt sur l’App Store et sur Google Play.",
     "featuresTitle": "Ce que vous obtenez",
@@ -71,7 +72,8 @@
     "heading": "Politique de confidentialité",
     "description": "Comment l’application Fifty – Mölkky jeu traite les données : aucun compte, données conservées sur votre appareil, publicités via Google AdMob, choix de consentement et suppression des données.",
     "intro": [
-      "Cette politique explique ce que fait l’application Fifty – Mölkky jeu (« l’application ») des informations. Nous l’avons volontairement gardée simple : il n’y a aucun compte utilisateur et nous n’exploitons aucun serveur qui collecterait vos données."
+      "Cette politique explique ce que fait l’application Fifty – Mölkky jeu (« l’application ») des informations. Nous l’avons volontairement gardée simple : il n’y a aucun compte utilisateur et nous n’exploitons aucun serveur qui collecterait vos données.",
+      "Le jeu se joue aussi dans un navigateur, à l’adresse haraltti.github.io/molkkygame/play. La version navigateur n’affiche aucune publicité et ne collecte aucune donnée : vos résultats restent uniquement dans votre navigateur."
     ],
     "sections": [
       {

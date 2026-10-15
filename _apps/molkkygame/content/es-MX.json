@@ -26,7 +26,8 @@
     "tagline": "Llega a 50 exactos.",
     "intro": [
       "Fifty es un juego de tiro con las reglas del mölkky. Arrastra, apunta y suelta: el palo se desliza hacia los bolos, o pasa por encima de los de adelante con un globo. Un bolo vale su número, varios valen su cantidad, y pasarte de 50 te regresa a 25.",
-      "Cada día hay un reto nuevo, el mismo para todos: llega a exactamente 50 en la menor cantidad de tiros. Después practica todo lo que quieras, o juega un juego completo desde la formación de salida."
+      "Cada día hay un reto nuevo, el mismo para todos: llega a exactamente 50 en la menor cantidad de tiros. Después practica todo lo que quieras, o juega un juego completo desde la formación de salida.",
+      "**[Juega el reto del día en tu navegador](https://haraltti.github.io/molkkygame/play/)**, sin instalar nada."
     ],
     "storesNote": "La app llegará pronto a la App Store y a Google Play.",
     "featuresTitle": "Lo que obtienes",
@@ -71,7 +72,8 @@
     "heading": "Aviso de privacidad",
     "description": "Cómo trata los datos la app Fifty – Mölkky juego: sin cuentas, los datos se quedan en tu dispositivo, anuncios con Google AdMob, opciones de consentimiento y cómo borrar tus datos.",
     "intro": [
-      "Este aviso explica qué hace la app Fifty – Mölkky juego (“la app”) con la información. La mantuvimos sencilla a propósito: no hay cuentas de usuario y no tenemos ningún servidor que recopile tus datos."
+      "Este aviso explica qué hace la app Fifty – Mölkky juego (“la app”) con la información. La mantuvimos sencilla a propósito: no hay cuentas de usuario y no tenemos ningún servidor que recopile tus datos.",
+      "El juego también se puede jugar en un navegador en haraltti.github.io/molkkygame/play. La versión de navegador no muestra anuncios ni recopila datos: tus resultados se guardan solo en tu navegador."
     ],
     "sections": [
       {
