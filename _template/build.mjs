@@ -166,7 +166,7 @@ function footer(ctx) {
       ${links}
       </nav>
       <p>${escapeHtml(ui.contact)}${lang.htmlLang.startsWith('fr') ? ' ' : ''}: <a href="mailto:${app.contactEmail}">${app.contactEmail}</a></p>
-      <p>© ${app.copyrightYear} ${escapeHtml(app.developer)}</p>
+      <p>© ${app.copyrightYear} <a href="/">Haraltti Apps</a></p>
       <p class="trademark">${escapeHtml(app.trademarkNote)}</p>
     </div>
   </footer>`;
