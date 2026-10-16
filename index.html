@@ -15,6 +15,10 @@
   <meta property="og:image" content="https://haraltti.github.io/molkkygame/play/og-image.png">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" type="image/png" href="/molkkygame/icon.png">
+  <!-- The fonts are fetched with the stylesheet, so the text does not reflow when they arrive. -->
+  <link rel="preload" href="/assets/apppages/fonts/Barlow_500Medium.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="/assets/apppages/fonts/Barlow_700Bold.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="/assets/apppages/fonts/BarlowCondensed_800ExtraBold.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="stylesheet" href="/assets/apppages/apppages.css">
   <!-- The front page of the site: every app as a card. PumpSniper comes first, because its store
        pages link here. Fonts and colours come from the shared app page stylesheet; nothing is
@@ -57,7 +61,7 @@
     <ul class="apps">
       <li class="app">
         <div class="app-top">
-          <img src="/pumpsniper/icon.png" alt="" width="64" height="64">
+          <img src="/assets/hub/pumpsniper-128.png" alt="" width="64" height="64">
           <h2><a href="/pumpsniper/">PumpSniper</a></h2>
         </div>
         <p>Track new Solana tokens in real time.</p>
@@ -70,31 +74,31 @@
             <svg viewBox="0 0 512 512" fill="currentColor" aria-hidden="true"><path d="M325.3 234.3L104.6 13.6c-5-3.9-11.9-4.7-17.6-1.6-5.7 3.1-9 9.3-8.4 15.7v456.6c-.6 6.4 2.7 12.6 8.4 15.7 5.7 3.1 12.6 2.3 17.6-1.6l220.7-220.7c8.6-8.6 8.6-22.7 0-31.4zm42.7-14.9l-49.8-28.7-56.4 56.3 56.4 56.3 49.9-28.8c16-10.4 16-33.7-.1-55.1z"/></svg>
             Google Play
           </a>
-          <a class="btn" href="/pumpsniper/">More</a>
+          <a class="btn" href="/pumpsniper/">About PumpSniper</a>
         </div>
       </li>
 
       <li class="app">
         <div class="app-top">
-          <img src="/molkkygame/icon.png" alt="" width="64" height="64">
+          <img src="/assets/hub/molkkygame-128.png" alt="" width="64" height="64">
           <h2><a href="/molkkygame/">Fifty – Mölkky Game</a></h2>
         </div>
         <p>A Mölkky throwing game with a new puzzle every day: land on exactly 50 in as few throws as you can.</p>
         <div class="actions">
           <a class="btn primary" href="/molkkygame/play/?lang=en">Play in your browser</a>
-          <a class="btn" href="/molkkygame/">More</a>
+          <a class="btn" href="/molkkygame/">About the game</a>
         </div>
         <p class="soon">Coming soon to the App Store and Google Play.</p>
       </li>
 
       <li class="app">
         <div class="app-top">
-          <img src="/molkky/icon.png" alt="" width="64" height="64">
+          <img src="/assets/hub/molkky-128.png" alt="" width="64" height="64">
           <h2><a href="/molkky/">Fifty – Mölkky Score Keeper</a></h2>
         </div>
         <p>Playing real Mölkky in the yard? Tap the fallen pins and the app keeps the score and follows the rules.</p>
         <div class="actions">
-          <a class="btn" href="/molkky/">More</a>
+          <a class="btn" href="/molkky/">About the score keeper</a>
         </div>
         <p class="soon">Coming soon to the App Store and Google Play.</p>
       </li>
