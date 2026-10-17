@@ -46,7 +46,7 @@
   color-scheme: dark;
 }
 * { box-sizing: border-box; }
-html, body { margin: 0; }
+html, body { margin: 0; overscroll-behavior: none; }
 body {
   background: var(--bg); color: var(--ink); font-family: var(--font-body); font-size: 16px;
   padding: 14px 16px 24px; -webkit-tap-highlight-color: transparent;
@@ -117,7 +117,7 @@ button:focus-visible { outline: 3px solid #F2B33D; outline-offset: 2px; }
   </div>
 
   <div class="card" aria-live="polite">
-    <div><div class="label">Inning</div><div class="value" id="inning">1 / 4</div></div>
+    <div><div class="label">Inning</div><div class="value" id="inning">1 / 3</div></div>
     <div><div class="score"><span id="score">0</span><small> / 21</small></div><div class="need" id="need"></div></div>
     <div class="right"><div class="label">Bag</div><div class="value" id="bag">1 / 4</div></div>
   </div>
@@ -143,9 +143,9 @@ button:focus-visible { outline: 3px solid #F2B33D; outline-offset: 2px; }
 
   <details class="rules">
     <summary>How to play</summary>
-    <p>Drag down on the board and let go: the stick-out arrow sets where your bag lands. A <b>Slider</b> lands short and slides on; a <b>Lob</b> drops almost where it lands.</p>
+    <p>Drag down on the board and let go: the arrow shows the direction, the bar how hard you toss. A <b>Slider</b> lands short and slides on; a <b>Lob</b> drops almost where it lands.</p>
     <p>Bag in the hole = <b>3</b>, bag on the board = <b>1</b>, off the board = 0. Your score counts every blue bag where it lies, so knocking your own bag in counts too. The red bags are blockers.</p>
-    <p>Land on <b>exactly 21</b> in as few bags as you can. Go over and you drop back to <b>13</b>. Four bags per inning, four innings. Everyone gets the same puzzle each day.</p>
+    <p>Land on <b>exactly 21</b> in as few bags as you can. Go over and you drop back to <b>13</b>. Four bags per inning, three innings. Everyone gets the same puzzle each day.</p>
   </details>
 </div>
 
@@ -195,7 +195,7 @@ button:focus-visible { outline: 3px solid #F2B33D; outline-offset: 2px; }
     slide: { air: 0.55, land: 46, arc: 22 },
     lob: { air: 0.9, land: 9, arc: 48 },
   };
-  var TARGET = 21, BUST_TO = 13, BAGS = 4, INNINGS = 4;
+  var TARGET = 21, BUST_TO = 13, BAGS = 4, INNINGS = 3;
 
   function onBoard(x, y) {
     return x >= BOARD.x && x <= BOARD.x + BOARD.w && y >= BOARD.y && y <= BOARD.y + BOARD.h;
@@ -345,15 +345,20 @@ button:focus-visible { outline: 3px solid #F2B33D; outline-offset: 2px; }
   function buildPuzzle(seed) {
     var rnd = mulberry32(seed * 7919 + 17);
     var start = 6 + Math.floor(rnd() * 9);           // 6..14
-    var count = 2 + Math.floor(rnd() * 2);           // 2..3 blockers
+    var count = 3 + Math.floor(rnd() * 2);           // 3..4 blockers
     var blockers = [];
     var guard = 0;
     while (blockers.length < count && guard++ < 200) {
       var x, y;
       if (blockers.length === 0) {
-        // One blocker usually guards the front of the hole.
+        // One blocker guards the front of the hole…
         x = HOLE.x - 4 + rnd() * 8;
         y = HOLE.y + 6 + rnd() * 8;
+      } else if (blockers.length === 1) {
+        // …and one sits beside or behind it.
+        var side = rnd() < 0.5 ? -1 : 1;
+        x = HOLE.x + side * (6.5 + rnd() * 3);
+        y = HOLE.y - 3 + rnd() * 6;
       } else {
         x = BOARD.x + BAG_R + rnd() * (BOARD.w - 2 * BAG_R);
         y = BOARD.y + BAG_R + rnd() * (BOARD.h - 2 * BAG_R);
@@ -523,20 +528,18 @@ button:focus-visible { outline: 3px solid #F2B33D; outline-offset: 2px; }
     bags.forEach(function (b) { if (b.state === 'air') drawBag(b, 1); });
 
     if (aim && !animating && game.outcome === 'playing') {
-      var land = landingPoint(aim);
-      // Dashed flight line from the bottom of the screen to the landing spot.
-      ctx.setLineDash([1.2, 1.2]);
-      ctx.lineWidth = 0.4;
-      ctx.strokeStyle = '#fff';
+      // Only the direction is shown, as a short arrow at the bottom: where the bag lands is up
+      // to the player's feel for the pull, like in the real game.
+      var sx = ORIGIN.x + aim.dx * 34, sy = ORIGIN.y + aim.dy * 34;
+      var ex = ORIGIN.x + aim.dx * 44, ey = ORIGIN.y + aim.dy * 44;
+      ctx.lineWidth = 0.6; ctx.strokeStyle = '#fff'; ctx.lineCap = 'round';
+      ctx.beginPath(); ctx.moveTo(sx, sy); ctx.lineTo(ex, ey); ctx.stroke();
+      var ang = Math.atan2(aim.dy, aim.dx);
       ctx.beginPath();
-      var sx = ORIGIN.x + aim.dx * 34, sy = FIELD_H + 1;
-      ctx.moveTo(sx, sy);
-      var bow = KINDS[kind].arc * 0.25;
-      ctx.quadraticCurveTo((sx + land.x) / 2 + aim.dy * bow * -0.3, (sy + land.y) / 2 - bow, land.x, land.y);
+      ctx.moveTo(ex + Math.cos(ang + 2.6) * 2, ey + Math.sin(ang + 2.6) * 2);
+      ctx.lineTo(ex, ey);
+      ctx.lineTo(ex + Math.cos(ang - 2.6) * 2, ey + Math.sin(ang - 2.6) * 2);
       ctx.stroke();
-      ctx.setLineDash([]);
-      ctx.beginPath(); ctx.arc(land.x, land.y, BAG_R, 0, Math.PI * 2);
-      ctx.lineWidth = 0.5; ctx.strokeStyle = '#fff'; ctx.stroke();
       // Power bar.
       ctx.fillStyle = 'rgba(255,255,255,0.35)';
       ctx.fillRect(FIELD_W - 3, FIELD_H - 26, 1.2, 22);
@@ -681,7 +684,7 @@ button:focus-visible { outline: 3px solid #F2B33D; outline-offset: 2px; }
     if (d < 1.5 || dy < 0.3 * d) return null;
     // Short pulls still aim forward: the sideways part is kept small against a minimum pull.
     var down = Math.max(dy, 8), len = Math.hypot(dx * 0.6, down);
-    return { dx: -dx * 0.6 / len, dy: -down / len, power: Math.min(1, d / 22), kind: kind };
+    return { dx: -dx * 0.6 / len, dy: -down / len, power: Math.min(1, d / 30), kind: kind };
   }
   cv.addEventListener('pointerdown', function (e) {
     if (animating || !game || game.outcome !== 'playing') return;
@@ -701,6 +704,11 @@ button:focus-visible { outline: 3px solid #F2B33D; outline-offset: 2px; }
     if (t) play(t, false); else draw();
   });
   cv.addEventListener('pointercancel', function () { dragStart = null; aim = null; draw(); });
+  // In-app browsers (Telegram, Instagram and the like) take a downward swipe as "close" or move
+  // the whole page with it; the swipes on the board are the game's own.
+  ['touchstart', 'touchmove'].forEach(function (type) {
+    cv.addEventListener(type, function (e) { e.preventDefault(); }, { passive: false });
+  });
 
   function setKind(k) {
     kind = k;
