@@ -1,0 +1,743 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cornhole Daily</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Prototype: a daily cornhole puzzle. Land on exactly 21 in as few bags as you can.">
+<style>
+/* Prototype of a daily cornhole puzzle, one phone-width column like the Mölkky game:
+   title, score card, hint, the board seen from above, throw type, stats. */
+:root {
+  --bg: #F4F0E6;
+  --surface: #FFFFFF;
+  --ink: #1B1F1C;
+  --muted: #5A625C;
+  --border: #E2DBCB;
+  --primary: #1F4E79;
+  --on-primary: #FFFFFF;
+  --info: #DCE7F2;
+  --grass: #6E9B4E;
+  --grass-dark: #5F8A42;
+  --wood: #E3C08A;
+  --wood-edge: #A97B43;
+  --hole: #2A1C10;
+  --mine: #1F4E79;
+  --mine-edge: #0E2740;
+  --theirs: #C8463B;
+  --theirs-edge: #7C2019;
+  --overlay: rgba(14, 26, 36, 0.9);
+  --font-num: "Arial Narrow", "Roboto Condensed", Impact, sans-serif;
+  --font-body: "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #111315; --surface: #1B1E21; --ink: #F2EFE8; --muted: #A9B0AB; --border: #2C3136;
+    --primary: #2F6FB0; --info: #1C2B3A; --grass: #3F6230; --grass-dark: #36552A;
+    --wood: #CDA66E; --wood-edge: #8C6334; --mine: #3B82C9; --mine-edge: #DCE7F2;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #111315; --surface: #1B1E21; --ink: #F2EFE8; --muted: #A9B0AB; --border: #2C3136;
+  --primary: #2F6FB0; --info: #1C2B3A; --grass: #3F6230; --grass-dark: #36552A;
+  --wood: #CDA66E; --wood-edge: #8C6334; --mine: #3B82C9; --mine-edge: #DCE7F2;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body {
+  background: var(--bg); color: var(--ink); font-family: var(--font-body); font-size: 16px;
+  padding: 14px 16px 24px; -webkit-tap-highlight-color: transparent;
+}
+.app { max-width: 420px; margin: 0 auto; display: flex; flex-direction: column; gap: 10px; }
+.head { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; }
+h1 { margin: 0; font-family: var(--font-num); font-weight: 800; font-size: 34px; color: var(--primary); letter-spacing: 0.5px; }
+.mode { font-weight: 600; color: var(--muted); font-size: 15px; }
+.card {
+  background: var(--primary); color: var(--on-primary); border-radius: 18px; padding: 10px 16px;
+  display: grid; grid-template-columns: 1fr auto 1fr; align-items: center;
+}
+.card .label { font-size: 13px; opacity: 0.85; }
+.card .value { font-weight: 700; font-size: 17px; }
+.card .score { font-family: var(--font-num); font-weight: 800; font-size: 52px; line-height: 1; text-align: center; min-width: 110px; }
+.card .score small { font-size: 22px; opacity: 0.7; font-weight: 700; }
+.card .need { text-align: center; font-size: 13px; font-weight: 700; opacity: 0.9; margin-top: 2px; }
+.card .right { text-align: right; }
+.hint { background: var(--info); border-radius: 14px; padding: 9px 14px; font-weight: 600; font-size: 15px; min-height: 40px; }
+/* The board is 40 × 64 field units: on a low window it narrows so the whole board stays in view. */
+.field {
+  position: relative; border-radius: 18px; overflow: hidden; touch-action: none; user-select: none;
+  width: min(100%, calc((100vh - 290px) / 1.6), calc((100dvh - 290px) / 1.6)); min-width: 220px; margin: 0 auto;
+}
+canvas { display: block; width: 100%; }
+.pop {
+  position: absolute; left: 50%; top: 40%; transform: translate(-50%, -50%) scale(0.6); pointer-events: none;
+  background: var(--primary); color: #fff; border: 2px solid #fff; border-radius: 16px; padding: 2px 12px;
+  font-family: var(--font-num); font-weight: 800; font-size: 30px; opacity: 0; transition: opacity 0.2s, transform 0.25s;
+}
+.pop.show { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+.kinds { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+button {
+  font: inherit; font-weight: 700; font-size: 16px; min-height: 46px; border-radius: 12px; cursor: pointer;
+  border: 2px solid var(--border); background: var(--surface); color: var(--ink);
+}
+button.on, button.primary { background: var(--primary); border-color: var(--primary); color: var(--on-primary); }
+button:focus-visible { outline: 3px solid #F2B33D; outline-offset: 2px; }
+.kind small { display: block; font-weight: 500; font-size: 12px; opacity: 0.8; }
+.row { display: flex; gap: 8px; }
+.row button { flex: 1; }
+.stats { text-align: center; color: var(--muted); font-size: 14px; }
+.overlay {
+  position: fixed; inset: 0; background: var(--overlay); color: #fff; display: none;
+  flex-direction: column; align-items: center; justify-content: center; gap: 10px; padding: 24px; text-align: center;
+}
+.overlay.show { display: flex; }
+.overlay .big { font-family: var(--font-num); font-weight: 800; font-size: 96px; line-height: 1; }
+.overlay h2 { margin: 0; font-size: 28px; }
+.overlay p { margin: 0; opacity: 0.9; }
+.overlay .bags { font-size: 26px; letter-spacing: 2px; }
+.overlay .actions { display: flex; flex-direction: column; gap: 10px; width: 100%; max-width: 300px; margin-top: 8px; }
+.overlay button { background: transparent; color: #fff; border-color: #fff; }
+.overlay button.primary { background: #fff; color: var(--primary); border-color: #fff; }
+.intro { gap: 14px; background: rgba(14, 26, 36, 0.97); }
+.intro h2 { font-size: 30px; }
+.intro .lines { display: grid; gap: 8px; text-align: left; font-size: 17px; font-weight: 600; }
+.intro .lines span { display: inline-block; min-width: 46px; font-family: var(--font-num); font-weight: 800; font-size: 22px; }
+.rules { font-size: 14px; color: var(--muted); line-height: 1.45; }
+.rules summary { cursor: pointer; font-weight: 700; color: var(--ink); }
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="head">
+    <h1>Cornhole Daily</h1>
+    <span class="mode" id="mode"></span>
+  </div>
+
+  <div class="card" aria-live="polite">
+    <div><div class="label">Inning</div><div class="value" id="inning">1 / 4</div></div>
+    <div><div class="score"><span id="score">0</span><small> / 21</small></div><div class="need" id="need"></div></div>
+    <div class="right"><div class="label">Bag</div><div class="value" id="bag">1 / 4</div></div>
+  </div>
+
+  <div class="hint" id="hint"></div>
+
+  <div class="field" id="field">
+    <canvas id="cv" aria-label="Cornhole board. Drag down and release to toss a bag."></canvas>
+    <div class="pop" id="pop"></div>
+  </div>
+
+  <div class="kinds" role="radiogroup" aria-label="Throw type">
+    <button class="kind on" id="slideBtn" role="radio" aria-checked="true">Slider<small>lands short, slides</small></button>
+    <button class="kind" id="lobBtn" role="radio" aria-checked="false">Lob<small>high, stops dead</small></button>
+  </div>
+
+  <div class="row">
+    <button id="dailyBtn">Daily puzzle</button>
+    <button id="practiceBtn">Practice</button>
+  </div>
+
+  <div class="stats" id="stats"></div>
+
+  <details class="rules">
+    <summary>How to play</summary>
+    <p>Drag down on the board and let go: the stick-out arrow sets where your bag lands. A <b>Slider</b> lands short and slides on; a <b>Lob</b> drops almost where it lands.</p>
+    <p>Bag in the hole = <b>3</b>, bag on the board = <b>1</b>, off the board = 0. Your score counts every blue bag where it lies, so knocking your own bag in counts too. The red bags are blockers.</p>
+    <p>Land on <b>exactly 21</b> in as few bags as you can. Go over and you drop back to <b>13</b>. Four bags per inning, four innings. Everyone gets the same puzzle each day.</p>
+  </details>
+</div>
+
+<div class="overlay intro" id="intro" role="dialog" aria-modal="true" aria-labelledby="introTitle">
+  <h2 id="introTitle">Get exactly 21</h2>
+  <div class="lines">
+    <div><span>3</span>Bag in the hole</div>
+    <div><span>1</span>Bag on the board</div>
+    <div><span>0</span>Off the board</div>
+    <div><span>13</span>Go over 21 and you drop back to 13</div>
+  </div>
+  <p>Drag down on the board and let go to toss. Use as few bags as you can. Same puzzle for everyone today.</p>
+  <div class="actions"><button class="primary" id="introBtn">Let's toss</button></div>
+</div>
+
+<div class="overlay" id="overlay" role="dialog" aria-modal="true">
+  <div class="big" id="oScore">21</div>
+  <h2 id="oTitle">Exactly 21!</h2>
+  <p id="oText"></p>
+  <div class="bags" id="oBags"></div>
+  <p id="oNote"></p>
+  <div class="actions">
+    <button class="primary" id="shareBtn">Share result</button>
+    <button id="againBtn">Practice more</button>
+    <button id="closeBtn">Close</button>
+  </div>
+</div>
+
+<script>
+(function () {
+  'use strict';
+
+  // ---------------------------------------------------------------- the simulation
+  // Units are inches, seen from above. The board is 24 × 48 with a 6" hole centred 9" from its
+  // top edge. Bags are 6" squares, simulated as discs. Fixed time step and no randomness in the
+  // physics, so a daily puzzle can be replayed from its throws.
+  var FIELD_W = 40, FIELD_H = 64;
+  var BOARD = { x: 8, y: 6, w: 24, h: 48 };
+  var HOLE = { x: 20, y: 15, r: 3 };
+  var BAG_R = 3;
+  var ORIGIN = { x: 20, y: 96 };           // where the thrower stands, below the screen
+  var DT = 1 / 120;
+  var BOARD_DEC = 34;                       // inches/s² of slowing down on the board
+  var GROUND_DEC = 400;                     // the grass stops a bag almost at once
+  var RESTITUTION = 0.25;
+  var KINDS = {
+    slide: { air: 0.55, land: 46, arc: 22 },
+    lob: { air: 0.9, land: 9, arc: 48 },
+  };
+  var TARGET = 21, BUST_TO = 13, BAGS = 4, INNINGS = 4;
+
+  function onBoard(x, y) {
+    return x >= BOARD.x && x <= BOARD.x + BOARD.w && y >= BOARD.y && y <= BOARD.y + BOARD.h;
+  }
+  function inHole(x, y) {
+    var dx = x - HOLE.x, dy = y - HOLE.y;
+    return dx * dx + dy * dy < HOLE.r * HOLE.r;
+  }
+
+  /** Where a throw lands: the drag sets the direction and how far (power 0..1). */
+  function landingPoint(t) {
+    var dist = 30 + 66 * t.power;
+    return { x: ORIGIN.x + t.dx * dist, y: ORIGIN.y + t.dy * dist };
+  }
+
+  function bag(x, y, mine) {
+    return { x: x, y: y, vx: 0, vy: 0, mine: mine, state: 'board', spin: 0, air: 0 };
+  }
+
+  /** A bag in the air flies to its landing point; then it is a disc on the board or the grass. */
+  function launch(world, t) {
+    var k = KINDS[t.kind];
+    var land = landingPoint(t);
+    var b = bag(ORIGIN.x, ORIGIN.y, true);
+    b.state = 'air';
+    b.air = k.air;
+    b.airTotal = k.air;
+    b.from = { x: ORIGIN.x, y: ORIGIN.y };
+    b.land = land;
+    b.landSpeed = k.land;
+    b.dx = t.dx; b.dy = t.dy;
+    b.arc = k.arc;
+    b.spin = 0;
+    world.bags.push(b);
+    world.flying = b;
+  }
+
+  function settleState(b) {
+    if (b.state === 'hole' || b.state === 'air') return;
+    if (inHole(b.x, b.y) && onBoard(b.x, b.y)) { b.state = 'hole'; b.vx = 0; b.vy = 0; return; }
+    b.state = onBoard(b.x, b.y) ? 'board' : 'ground';
+  }
+
+  /** One time step. Returns false when nothing moves any more. */
+  function step(world) {
+    var bags = world.bags, i, j, moving = false;
+    for (i = 0; i < bags.length; i++) {
+      var b = bags[i];
+      if (b.state === 'air') {
+        b.air -= DT;
+        var p = 1 - Math.max(0, b.air) / b.airTotal;
+        b.x = b.from.x + (b.land.x - b.from.x) * p;
+        b.y = b.from.y + (b.land.y - b.from.y) * p;
+        b.spin += DT * 9;
+        if (b.air <= 0) {
+          b.x = b.land.x; b.y = b.land.y;
+          if (onBoard(b.x, b.y) && inHole(b.x, b.y)) {
+            b.state = 'hole';                 // straight in: an airmail
+          } else {
+            b.state = onBoard(b.x, b.y) ? 'board' : 'ground';
+            var sp = b.state === 'board' ? b.landSpeed : 0;
+            b.vx = b.dx * sp; b.vy = b.dy * sp;
+            // Landing on top of another bag gives it a shove.
+            for (j = 0; j < bags.length; j++) {
+              var q = bags[j];
+              if (q === b || q.state === 'hole' || q.state === 'air') continue;
+              var ox = q.x - b.x, oy = q.y - b.y;
+              if (ox * ox + oy * oy < 4 * BAG_R * BAG_R) {
+                q.vx += b.dx * (b.landSpeed * 0.5 + 10); q.vy += b.dy * (b.landSpeed * 0.5 + 10);
+              }
+            }
+          }
+          world.flying = null;
+        }
+        moving = true;
+        continue;
+      }
+      if (b.state === 'hole') continue;
+      if (b.vx !== 0 || b.vy !== 0) {
+        var s = Math.sqrt(b.vx * b.vx + b.vy * b.vy);
+        var dec = onBoard(b.x, b.y) ? BOARD_DEC : GROUND_DEC;
+        var s2 = s - dec * DT;
+        if (s2 <= 0) { b.vx = 0; b.vy = 0; }
+        else {
+          b.vx *= s2 / s; b.vy *= s2 / s;
+          b.x += b.vx * DT; b.y += b.vy * DT;
+          b.spin += s2 * DT * 0.04;
+        }
+        // A moving bag drops into the hole as soon as its middle is over it.
+        if (onBoard(b.x, b.y) && inHole(b.x, b.y)) { b.state = 'hole'; b.vx = 0; b.vy = 0; continue; }
+      }
+    }
+    // Bags push each other (only those lying on the board or the grass).
+    for (i = 0; i < bags.length; i++) {
+      var a = bags[i];
+      if (a.state === 'hole' || a.state === 'air') continue;
+      for (j = i + 1; j < bags.length; j++) {
+        var c = bags[j];
+        if (c.state === 'hole' || c.state === 'air') continue;
+        if (a.vx === 0 && a.vy === 0 && c.vx === 0 && c.vy === 0) continue;
+        var dx = c.x - a.x, dy = c.y - a.y, min = 2 * BAG_R, d2 = dx * dx + dy * dy;
+        if (d2 >= min * min || d2 === 0) continue;
+        var d = Math.sqrt(d2), nx = dx / d, ny = dy / d;
+        var rv = (c.vx - a.vx) * nx + (c.vy - a.vy) * ny;
+        if (rv < 0) {
+          var imp = -(1 + RESTITUTION) * rv / 2;
+          a.vx -= imp * nx; a.vy -= imp * ny;
+          c.vx += imp * nx; c.vy += imp * ny;
+        }
+        var push = (min - d) / 2;
+        a.x -= nx * push; a.y -= ny * push;
+        c.x += nx * push; c.y += ny * push;
+      }
+    }
+    for (i = 0; i < bags.length; i++) {
+      var o = bags[i];
+      settleState(o);
+      if (o.state === 'air' || o.vx !== 0 || o.vy !== 0) moving = true;
+    }
+    return moving;
+  }
+
+  function run(world) { var n = 0; while (step(world) && n < 4000) n++; }
+
+  /** Points of the blue bags where they lie now. */
+  function boardPoints(world) {
+    var p = 0;
+    world.bags.forEach(function (b) {
+      if (!b.mine) return;
+      if (b.state === 'hole') p += 3;
+      else if (b.state === 'board') p += 1;
+    });
+    return p;
+  }
+
+  // ---------------------------------------------------------------- the puzzle
+  function mulberry32(a) {
+    return function () {
+      a |= 0; a = (a + 0x6D2B79F5) | 0;
+      var t = Math.imul(a ^ (a >>> 15), 1 | a);
+      t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+      return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+    };
+  }
+
+  /** The day's puzzle: a starting score and red blocker bags lying on the board. */
+  function buildPuzzle(seed) {
+    var rnd = mulberry32(seed * 7919 + 17);
+    var start = 6 + Math.floor(rnd() * 9);           // 6..14
+    var count = 2 + Math.floor(rnd() * 2);           // 2..3 blockers
+    var blockers = [];
+    var guard = 0;
+    while (blockers.length < count && guard++ < 200) {
+      var x, y;
+      if (blockers.length === 0) {
+        // One blocker usually guards the front of the hole.
+        x = HOLE.x - 4 + rnd() * 8;
+        y = HOLE.y + 6 + rnd() * 8;
+      } else {
+        x = BOARD.x + BAG_R + rnd() * (BOARD.w - 2 * BAG_R);
+        y = BOARD.y + BAG_R + rnd() * (BOARD.h - 2 * BAG_R);
+      }
+      var ok = !inHole(x, y) && Math.hypot(x - HOLE.x, y - HOLE.y) > HOLE.r + BAG_R + 0.5;
+      for (var i = 0; i < blockers.length && ok; i++) {
+        if (Math.hypot(blockers[i].x - x, blockers[i].y - y) < 2 * BAG_R + 1) ok = false;
+      }
+      if (ok) blockers.push({ x: Math.round(x * 10) / 10, y: Math.round(y * 10) / 10 });
+    }
+    return { start: start, blockers: blockers };
+  }
+
+  var EPOCH = Date.UTC(2026, 9, 17);
+  function dailyNumber(date) {
+    var local = Date.UTC(date.getFullYear(), date.getMonth(), date.getDate());
+    return Math.floor((local - EPOCH) / 86400000) + 1;
+  }
+
+  // ---------------------------------------------------------------- one game
+  // Score = points banked from earlier innings + the blue bags on the board now.
+  function newInning(game) {
+    game.world = { bags: game.puzzle.blockers.map(function (p) { return bag(p.x, p.y, false); }), flying: null };
+    game.bagInInning = 0;
+  }
+  function startGame(puzzle) {
+    var g = { puzzle: puzzle, banked: puzzle.start, inning: 1, thrown: 0, log: [], marks: [], outcome: 'playing' };
+    newInning(g);
+    return g;
+  }
+  function liveScore(g) { return g.banked + boardPoints(g.world); }
+
+  /** After a bag has come to rest: win, bust, next bag or next inning. */
+  function afterRest(g, before) {
+    g.thrown += 1;
+    g.bagInInning += 1;
+    var gained = liveScore(g) - before;
+    g.marks.push(gained >= 3 ? 'hole' : gained >= 1 ? 'board' : gained < 0 ? 'minus' : 'miss');
+    var total = liveScore(g);
+    if (total === TARGET) { g.banked = total; g.outcome = 'won'; return { kind: 'won', gained: gained }; }
+    if (total > TARGET) {
+      g.banked = BUST_TO;
+      return endInning(g, { kind: 'bust', gained: gained, over: total });
+    }
+    if (g.bagInInning >= BAGS) { g.banked = total; return endInning(g, { kind: 'inning', gained: gained }); }
+    return { kind: 'bag', gained: gained };
+  }
+  function endInning(g, result) {
+    if (g.inning >= INNINGS) { g.outcome = 'out'; result.out = true; return result; }
+    g.inning += 1;
+    result.newInning = true;
+    return result;
+  }
+
+  // ---------------------------------------------------------------- screen
+  var $ = function (id) { return document.getElementById(id); };
+  var cv = $('cv'), ctx = cv.getContext('2d'), field = $('field');
+  var scale = 10, dpr = 1;
+  var kind = 'slide';
+  var mode = 'daily';
+  var day = dailyNumber(new Date());
+  var game, animating = false, aim = null, dragStart = null;
+  var css = function (name) { return getComputedStyle(document.documentElement).getPropertyValue(name).trim(); };
+
+  var store = (function () {
+    try { return JSON.parse(localStorage.getItem('cornhole-proto') || '{}'); } catch (e) { return {}; }
+  })();
+  store.days = store.days || {};
+  function save() { try { localStorage.setItem('cornhole-proto', JSON.stringify(store)); } catch (e) {} }
+
+  function resize() {
+    var w = field.clientWidth;
+    dpr = window.devicePixelRatio || 1;
+    scale = w / FIELD_W;
+    cv.width = Math.round(w * dpr);
+    cv.height = Math.round(FIELD_H * scale * dpr);
+    cv.style.height = FIELD_H * scale + 'px';
+    draw();
+  }
+
+  function roundRect(x, y, w, h, r) {
+    ctx.beginPath();
+    ctx.moveTo(x + r, y); ctx.arcTo(x + w, y, x + w, y + h, r); ctx.arcTo(x + w, y + h, x, y + h, r);
+    ctx.arcTo(x, y + h, x, y, r); ctx.arcTo(x, y, x + w, y, r); ctx.closePath();
+  }
+
+  function drawBag(b, alpha) {
+    var lift = 0, size = 2 * BAG_R;
+    if (b.state === 'air') {
+      var p = 1 - Math.max(0, b.air) / b.airTotal;
+      lift = Math.sin(Math.PI * p) * b.arc;
+      // Shadow on the ground under a flying bag.
+      ctx.save();
+      ctx.globalAlpha = 0.22;
+      ctx.fillStyle = '#000';
+      ctx.beginPath(); ctx.ellipse(b.x, b.y, BAG_R, BAG_R * 0.7, 0, 0, Math.PI * 2); ctx.fill();
+      ctx.restore();
+      size *= 1 + lift / 60;
+    }
+    ctx.save();
+    ctx.globalAlpha = alpha;
+    ctx.translate(b.x, b.y - lift * 0.35);
+    ctx.rotate(b.spin);
+    roundRect(-size / 2, -size / 2, size, size, size * 0.18);
+    ctx.fillStyle = css(b.mine ? '--mine' : '--theirs');
+    ctx.fill();
+    ctx.lineWidth = 0.45;
+    ctx.strokeStyle = css(b.mine ? '--mine-edge' : '--theirs-edge');
+    ctx.stroke();
+    // Stitching, so it reads as a bag and not a tile.
+    ctx.setLineDash([0.7, 0.6]);
+    ctx.lineWidth = 0.2;
+    ctx.strokeStyle = 'rgba(255,255,255,0.6)';
+    roundRect(-size / 2 + 0.8, -size / 2 + 0.8, size - 1.6, size - 1.6, size * 0.12);
+    ctx.stroke();
+    ctx.restore();
+  }
+
+  function draw() {
+    ctx.setTransform(dpr * scale, 0, 0, dpr * scale, 0, 0);
+    // Grass with mowing stripes.
+    ctx.fillStyle = css('--grass');
+    ctx.fillRect(0, 0, FIELD_W, FIELD_H);
+    ctx.fillStyle = css('--grass-dark');
+    for (var y = 0; y < FIELD_H; y += 8) ctx.fillRect(0, y, FIELD_W, 4);
+    // The board: shadow, wood, edge.
+    ctx.fillStyle = 'rgba(0,0,0,0.25)';
+    roundRect(BOARD.x + 0.6, BOARD.y + 0.9, BOARD.w, BOARD.h, 0.8); ctx.fill();
+    ctx.fillStyle = css('--wood');
+    roundRect(BOARD.x, BOARD.y, BOARD.w, BOARD.h, 0.8); ctx.fill();
+    ctx.lineWidth = 0.6; ctx.strokeStyle = css('--wood-edge'); ctx.stroke();
+    ctx.globalAlpha = 0.18; ctx.strokeStyle = css('--wood-edge'); ctx.lineWidth = 0.25;
+    for (var gy = BOARD.y + 3; gy < BOARD.y + BOARD.h; gy += 4.5) {
+      ctx.beginPath(); ctx.moveTo(BOARD.x + 1, gy); ctx.lineTo(BOARD.x + BOARD.w - 1, gy + 0.6); ctx.stroke();
+    }
+    ctx.globalAlpha = 1;
+    // The hole.
+    ctx.fillStyle = css('--hole');
+    ctx.beginPath(); ctx.arc(HOLE.x, HOLE.y, HOLE.r, 0, Math.PI * 2); ctx.fill();
+    ctx.lineWidth = 0.4; ctx.strokeStyle = css('--wood-edge'); ctx.stroke();
+
+    if (!game) return;
+    if (game.thrown === 0 && game.inning === 1 && !animating) {
+      ctx.fillStyle = 'rgba(255,255,255,0.95)';
+      ctx.strokeStyle = 'rgba(0,0,0,0.45)';
+      ctx.lineWidth = 0.5;
+      ctx.font = '700 3.2px system-ui, sans-serif';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.strokeText('3', HOLE.x + 5.2, HOLE.y); ctx.fillText('3', HOLE.x + 5.2, HOLE.y);
+      ctx.strokeText('1', BOARD.x + BOARD.w / 2, BOARD.y + 38); ctx.fillText('1', BOARD.x + BOARD.w / 2, BOARD.y + 38);
+      ctx.strokeText('0', BOARD.x - 4, BOARD.y + 38); ctx.fillText('0', BOARD.x - 4, BOARD.y + 38);
+    }
+    var bags = game.world.bags;
+    // Bags in the hole show as a sliver inside it.
+    bags.forEach(function (b) {
+      if (b.state !== 'hole') return;
+      ctx.save();
+      ctx.beginPath(); ctx.arc(HOLE.x, HOLE.y, HOLE.r - 0.3, 0, Math.PI * 2); ctx.clip();
+      ctx.globalAlpha = 0.85;
+      ctx.fillStyle = css(b.mine ? '--mine' : '--theirs');
+      ctx.fillRect(HOLE.x - HOLE.r, HOLE.y + 0.6, 2 * HOLE.r, HOLE.r);
+      ctx.restore();
+    });
+    bags.forEach(function (b) { if (b.state === 'ground') drawBag(b, 0.55); });
+    bags.forEach(function (b) { if (b.state === 'board') drawBag(b, 1); });
+    bags.forEach(function (b) { if (b.state === 'air') drawBag(b, 1); });
+
+    if (aim && !animating && game.outcome === 'playing') {
+      var land = landingPoint(aim);
+      // Dashed flight line from the bottom of the screen to the landing spot.
+      ctx.setLineDash([1.2, 1.2]);
+      ctx.lineWidth = 0.4;
+      ctx.strokeStyle = '#fff';
+      ctx.beginPath();
+      var sx = ORIGIN.x + aim.dx * 34, sy = FIELD_H + 1;
+      ctx.moveTo(sx, sy);
+      var bow = KINDS[kind].arc * 0.25;
+      ctx.quadraticCurveTo((sx + land.x) / 2 + aim.dy * bow * -0.3, (sy + land.y) / 2 - bow, land.x, land.y);
+      ctx.stroke();
+      ctx.setLineDash([]);
+      ctx.beginPath(); ctx.arc(land.x, land.y, BAG_R, 0, Math.PI * 2);
+      ctx.lineWidth = 0.5; ctx.strokeStyle = '#fff'; ctx.stroke();
+      // Power bar.
+      ctx.fillStyle = 'rgba(255,255,255,0.35)';
+      ctx.fillRect(FIELD_W - 3, FIELD_H - 26, 1.2, 22);
+      ctx.fillStyle = '#fff';
+      ctx.fillRect(FIELD_W - 3, FIELD_H - 4 - 22 * aim.power, 1.2, 22 * aim.power);
+    }
+  }
+
+  function setHint(text) { $('hint').textContent = text; }
+  function hintFor() {
+    var s = liveScore(game), need = TARGET - s;
+    if (game.thrown === 0 && game.inning === 1) return 'Drag down on the board and let go. You need ' + need + ' to hit exactly 21.';
+    if (need <= 0) return '';
+    if (need === 1) return 'Need 1: a bag on the board, not in the hole!';
+    if (need === 2) return 'Need 2: two on the board, or bump one in and one off…';
+    if (need === 3) return 'Need 3: the hole, or three on the board.';
+    return 'Need ' + need + '. Hole 3, board 1. Over 21 drops you to 13.';
+  }
+
+  function updateUI() {
+    $('score').textContent = liveScore(game);
+    var need = TARGET - liveScore(game);
+    $('need').textContent = game.outcome === 'playing' ? 'need ' + need : '';
+    $('inning').textContent = game.inning + ' / ' + INNINGS;
+    $('bag').textContent = Math.min(game.bagInInning + 1, BAGS) + ' / ' + BAGS;
+    $('mode').textContent = mode === 'daily' ? 'Puzzle #' + day : 'Practice';
+    $('dailyBtn').className = mode === 'daily' ? 'on' : '';
+    $('practiceBtn').className = mode === 'practice' ? 'on' : '';
+    if (game.outcome === 'playing') setHint(hintFor());
+    updateStats();
+  }
+
+  function showPop(text) {
+    var pop = $('pop');
+    pop.textContent = text;
+    pop.classList.add('show');
+    clearTimeout(showPop.t);
+    showPop.t = setTimeout(function () { pop.classList.remove('show'); }, 1100);
+  }
+
+  /** Throws animate in real time with the same steps the result is computed with. */
+  function play(t, instant) {
+    var before = liveScore(game);
+    launch(game.world, t);
+    game.log.push(t);
+    if (instant) { run(game.world); return finishThrow(before, true); }
+    animating = true;
+    var last = null, budget = 0;
+    (function tick(now) {
+      budget += last === null ? DT : Math.min(0.05, (now - last) / 1000);
+      last = now;
+      var moving = true;
+      while (budget >= DT && moving) { moving = step(game.world); budget -= DT; }
+      draw();
+      $('score').textContent = liveScore(game);
+      if (moving) { requestAnimationFrame(tick); return; }
+      finishThrow(before, false);
+    })(performance.now());
+  }
+
+  function finishThrow(before, instant) {
+    var r = afterRest(game, before);
+    if (instant) { if (r.newInning && game.outcome === 'playing') newInning(game); return; }
+    if (r.kind !== 'won') {
+      showPop(r.kind === 'bust' ? 'Over! Back to 13' : r.gained > 0 ? '+' + r.gained : r.gained < 0 ? String(r.gained) : 'Miss');
+    } else {
+      showPop('21!');
+    }
+    if (mode === 'daily') saveDaily();
+    var hold = r.newInning || r.out || r.kind === 'won' ? 1100 : 250;
+    setTimeout(function () {
+      if (r.newInning && game.outcome === 'playing') newInning(game);
+      animating = false;
+      draw();
+      updateUI();
+      if (game.outcome !== 'playing') finish();
+    }, hold);
+    $('score').textContent = liveScore(game);
+    if (r.kind === 'bust') setHint('Over 21 — back to 13. New inning.');
+    else if (r.kind === 'inning' && !r.out) setHint('Inning over. ' + liveScore(game) + ' banked.');
+  }
+
+  function saveDaily() {
+    store.days[day] = { log: game.log, outcome: game.outcome, thrown: game.thrown };
+    save();
+  }
+
+  function marksText() {
+    return game.marks.map(function (m) { return m === 'hole' ? '🕳️' : m === 'board' ? '🟦' : m === 'minus' ? '🟥' : '⬜'; }).join('');
+  }
+
+  function finish() {
+    var won = game.outcome === 'won';
+    $('oScore').textContent = liveScore(game);
+    $('oTitle').textContent = won ? 'Exactly 21!' : 'Out of innings';
+    $('oText').textContent = won ? 'in ' + game.thrown + ' bags' : 'You finished on ' + liveScore(game) + '.';
+    $('oBags').textContent = marksText();
+    var st = calcStats();
+    $('oNote').textContent = mode === 'daily' ? 'Streak ' + st.streak + ' · won ' + st.won + '/' + st.played + '. New puzzle tomorrow.' : '';
+    $('againBtn').textContent = mode === 'daily' ? 'Practice more' : 'Play again';
+    $('overlay').classList.add('show');
+  }
+
+  function calcStats() {
+    var played = 0, won = 0, streak = 0;
+    for (var d = 1; d <= day; d++) {
+      var r = store.days[d];
+      if (r && r.outcome !== 'playing') { played++; if (r.outcome === 'won') { won++; streak++; } else streak = 0; }
+      else if (d < day) streak = 0;
+    }
+    return { played: played, won: won, streak: streak };
+  }
+  function updateStats() {
+    var st = calcStats();
+    $('stats').textContent = 'Daily: played ' + st.played + ' · won ' + st.won + ' · streak ' + st.streak;
+  }
+
+  function startDaily() {
+    mode = 'daily';
+    game = startGame(buildPuzzle(day));
+    // A started or finished daily puzzle is restored by replaying its throws.
+    var rec = store.days[day];
+    if (rec && rec.log) rec.log.forEach(function (t) { if (game.outcome === 'playing') play(t, true); });
+    $('overlay').classList.remove('show');
+    draw(); updateUI();
+    if (game.outcome !== 'playing') finish();
+  }
+  function startPractice() {
+    mode = 'practice';
+    game = startGame(buildPuzzle(1000 + Math.floor(Math.random() * 100000)));
+    $('overlay').classList.remove('show');
+    draw(); updateUI();
+  }
+
+  // ---- aiming: drag down from anywhere on the board, like pulling back a slingshot
+  function toField(e) {
+    var r = cv.getBoundingClientRect();
+    return { x: (e.clientX - r.left) / scale, y: (e.clientY - r.top) / scale };
+  }
+  function aimFrom(p) {
+    var dx = p.x - dragStart.x, dy = p.y - dragStart.y, d = Math.hypot(dx, dy);
+    if (d < 1.5 || dy < 0.3 * d) return null;
+    // Short pulls still aim forward: the sideways part is kept small against a minimum pull.
+    var down = Math.max(dy, 8), len = Math.hypot(dx * 0.6, down);
+    return { dx: -dx * 0.6 / len, dy: -down / len, power: Math.min(1, d / 22), kind: kind };
+  }
+  cv.addEventListener('pointerdown', function (e) {
+    if (animating || !game || game.outcome !== 'playing') return;
+    cv.setPointerCapture(e.pointerId);
+    dragStart = toField(e);
+    aim = null;
+  });
+  cv.addEventListener('pointermove', function (e) {
+    if (!dragStart) return;
+    aim = aimFrom(toField(e));
+    draw();
+  });
+  cv.addEventListener('pointerup', function (e) {
+    if (!dragStart) return;
+    var t = aimFrom(toField(e));
+    dragStart = null; aim = null;
+    if (t) play(t, false); else draw();
+  });
+  cv.addEventListener('pointercancel', function () { dragStart = null; aim = null; draw(); });
+
+  function setKind(k) {
+    kind = k;
+    $('slideBtn').classList.toggle('on', k === 'slide');
+    $('lobBtn').classList.toggle('on', k === 'lob');
+    $('slideBtn').setAttribute('aria-checked', String(k === 'slide'));
+    $('lobBtn').setAttribute('aria-checked', String(k === 'lob'));
+  }
+  $('slideBtn').addEventListener('click', function () { setKind('slide'); });
+  $('lobBtn').addEventListener('click', function () { setKind('lob'); });
+  $('dailyBtn').addEventListener('click', startDaily);
+  $('practiceBtn').addEventListener('click', startPractice);
+  $('againBtn').addEventListener('click', startPractice);
+  $('closeBtn').addEventListener('click', function () { $('overlay').classList.remove('show'); });
+  $('shareBtn').addEventListener('click', function () {
+    var head = mode === 'daily' ? 'Cornhole Daily #' + day : 'Cornhole Daily (practice)';
+    var line = game.outcome === 'won' ? 'Exactly 21 in ' + game.thrown + ' bags' : 'Finished on ' + liveScore(game);
+    var text = head + '\n' + line + '\n' + marksText() + '\n' + location.href.split('?')[0];
+    var done = function () { $('shareBtn').textContent = 'Copied!'; setTimeout(function () { $('shareBtn').textContent = 'Share result'; }, 1500); };
+    if (navigator.share) navigator.share({ text: text }).catch(function () {});
+    else if (navigator.clipboard) navigator.clipboard.writeText(text).then(done, function () {});
+  });
+
+  window.addEventListener('resize', resize);
+  if (window.matchMedia) window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', draw);
+
+  // For checking the simulation from the console: same throw, same result.
+  window.cornhole = { buildPuzzle: buildPuzzle, startGame: startGame, launch: launch, run: run, boardPoints: boardPoints, landingPoint: landingPoint };
+
+  $('introBtn').addEventListener('click', function () {
+    $('intro').classList.remove('show');
+    store.introSeen = true; save();
+  });
+  startDaily();
+  resize();
+  if (!store.introSeen) $('intro').classList.add('show');
+})();
+</script>
+</body>
+</html>
