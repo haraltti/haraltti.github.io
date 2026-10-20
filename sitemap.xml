@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://haraltti.github.io/</loc></url>
+  <url><loc>https://haraltti.github.io/fi/</loc></url>
+  <url><loc>https://haraltti.github.io/fr/</loc></url>
+  <url><loc>https://haraltti.github.io/es-MX/</loc></url>
   <url><loc>https://haraltti.github.io/pumpsniper/</loc></url>
   <url><loc>https://haraltti.github.io/pumpsniper-privacy/</loc></url>
   <url><loc>https://haraltti.github.io/pumpsniper-support/</loc></url>

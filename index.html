@@ -7,10 +7,15 @@
   <meta name="description" content="Free mobile apps made in Finland: PumpSniper tracks new Solana tokens in real time, Fifty keeps the score in Mölkky and Fifty – Mölkky Game brings a new throwing puzzle every day.">
   <meta name="google-site-verification" content="BDCVcfU_uOb8fAYA-yDwdvN5z1jc4ykCGvjeMhq8YuM">
   <link rel="canonical" href="https://haraltti.github.io/">
+  <link rel="alternate" hreflang="en" href="https://haraltti.github.io/">
+  <link rel="alternate" hreflang="fi" href="https://haraltti.github.io/fi/">
+  <link rel="alternate" hreflang="fr" href="https://haraltti.github.io/fr/">
+  <link rel="alternate" hreflang="es-MX" href="https://haraltti.github.io/es-MX/">
+  <link rel="alternate" hreflang="x-default" href="https://haraltti.github.io/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Haraltti Apps">
   <meta property="og:title" content="Haraltti Apps">
-  <meta property="og:description" content="Free mobile apps made in Finland: PumpSniper, Fifty – Mölkky Score Keeper and Fifty – Mölkky Game.">
+  <meta property="og:description" content="Free mobile apps made in Finland: PumpSniper tracks new Solana tokens in real time, Fifty keeps the score in Mölkky and Fifty – Mölkky Game brings a new throwing puzzle every day.">
   <meta property="og:url" content="https://haraltti.github.io/">
   <meta property="og:image" content="https://haraltti.github.io/molkkygame/play/og-image.png">
   <meta name="twitter:card" content="summary_large_image">
@@ -20,11 +25,11 @@
   <link rel="preload" href="/assets/apppages/fonts/Barlow_700Bold.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="preload" href="/assets/apppages/fonts/BarlowCondensed_800ExtraBold.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="stylesheet" href="/assets/apppages/apppages.css">
-  <!-- The front page of the site: every app as a card. PumpSniper comes first, because its store
-       pages link here. Fonts and colours come from the shared app page stylesheet; nothing is
-       loaded from other sites. -->
+  <!-- Made by _template/hub.mjs: edit the texts there, not here. PumpSniper comes first, because
+       its store pages link to this address. -->
   <style>
-    .hub { width: 100%; max-width: 980px; margin: 0 auto; padding: 40px 16px 32px; flex: 1; }
+    .hub { width: 100%; max-width: 980px; margin: 0 auto; padding: 28px 16px 32px; flex: 1; }
+    .hub-head .lang { margin-bottom: 22px; }
     .hub-head h1 { font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 800;
       font-size: clamp(44px, 9vw, 64px); line-height: 1; margin: 0; color: var(--primary); }
     .hub-head p { margin: 10px 0 0; color: var(--muted); font-size: 19px; max-width: 34em; }
@@ -54,6 +59,12 @@
 <body>
   <main class="hub">
     <header class="hub-head">
+      <nav class="lang" aria-label="Language">
+        <a href="/" hreflang="en" lang="en" aria-current="true">English</a>
+        <a href="/fi/" hreflang="fi" lang="fi">Suomi</a>
+        <a href="/fr/" hreflang="fr" lang="fr">Français</a>
+        <a href="/es-MX/" hreflang="es-MX" lang="es-MX">Español</a>
+      </nav>
       <h1>Haraltti Apps</h1>
       <p>Small, free apps made in Finland.</p>
     </header>

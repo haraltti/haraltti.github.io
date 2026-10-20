@@ -12,7 +12,7 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const SITE = 'https://haraltti.github.io';
 const PAGES = ['', 'privacy/', 'support/'];
 
-const urls = [`${SITE}/`, `${SITE}/pumpsniper/`, `${SITE}/pumpsniper-privacy/`, `${SITE}/pumpsniper-support/`];
+const urls = [`${SITE}/`, `${SITE}/fi/`, `${SITE}/fr/`, `${SITE}/es-MX/`, `${SITE}/pumpsniper/`, `${SITE}/pumpsniper-privacy/`, `${SITE}/pumpsniper-support/`];
 
 for (const slug of fs.readdirSync(path.join(root, '_apps'))) {
   const app = JSON.parse(fs.readFileSync(path.join(root, '_apps', slug, 'app.json'), 'utf8'));
