@@ -182,14 +182,24 @@ function badge(kind, ui, svg) {
         </span>`;
 }
 
+/** A store badge for an app that is in that store: the same look, as a link, without "coming soon". */
+function storeLink(kind, ui, svg, href) {
+  const name = kind === 'apple' ? ui.appStore : ui.googlePlay;
+  const small = kind === 'apple' ? ui.downloadOn : ui.getItOn;
+  return `<a class="badge live" href="${href}">
+          ${svg.trim()}
+          <span><span class="small">${escapeHtml(small)}</span><span class="big">${escapeHtml(name)}</span></span>
+        </a>`;
+}
+
 function homeMain(ctx) {
   const { app, lang, mascot } = ctx;
   const h = lang.home;
   const apple = fs.readFileSync(path.join(root, '_template', 'badge-apple.svg'), 'utf8');
   const google = fs.readFileSync(path.join(root, '_template', 'badge-google.svg'), 'utf8');
   const stores = [];
-  stores.push(app.stores?.ios ? `<a class="badge" href="${app.stores.ios}">${apple}</a>` : badge('apple', lang.ui, apple));
-  stores.push(app.stores?.android ? `<a class="badge" href="${app.stores.android}">${google}</a>` : badge('google', lang.ui, google));
+  stores.push(app.stores?.ios ? storeLink('apple', lang.ui, apple, app.stores.ios) : badge('apple', lang.ui, apple));
+  stores.push(app.stores?.android ? storeLink('google', lang.ui, google, app.stores.android) : badge('google', lang.ui, google));
   return `<div class="wrap">
       <section class="hero">
         <div>

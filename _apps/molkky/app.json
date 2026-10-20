@@ -9,7 +9,7 @@
   "mascot": "mascot.svg",
   "defaultLanguage": "en",
   "languages": ["en", "fi", "fr", "es-MX"],
-  "stores": { "ios": null, "android": null },
+  "stores": { "ios": null, "android": "https://play.google.com/store/apps/details?id=com.haraltti.fifty" },
   "trademarkNote": "Mölkky is a trademark of Tactic Games. This app is not affiliated with Tactic Games.",
   "theme": {
     "primary": "#1F4E79",
